@@ -1,0 +1,170 @@
+/* 탑 배너 */
+.main-banner {
+	position: relative;
+	top: 0;
+	background: linear-gradient(110deg,#78d649 2%,#00b4a8 64%);
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+	.container {
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.inner {
+		max-width: 1080px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.image {
+		text-align: left;
+		img {
+			height: 100%;
+			&.mobile { display: none; }
+		}
+	}
+	.text-area {
+		position: absolute;
+		top: 50%;
+		right: 13px;
+		width: 60%;
+		max-width: 620px;
+		transform: translateY(-50%);
+	}
+	h2 {
+		font-family: 'Godo';
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 34px;
+	}
+	.text {
+		margin-top: 10px;
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.more {
+		margin-top: 15px;
+		line-height: 24px;
+		a {
+			padding: 0 4px 2px;
+			font-size: 16px;
+			font-weight: 700;
+			border-bottom: 2px solid #fff;
+		}
+	}
+	.hide-check {
+		position: absolute;
+		bottom: 15px;
+		right: 32px;
+		font-size: 14px;
+		input[type='checkbox'] {
+			width: 15px;
+			height: 15px;
+		}
+		input[type='checkbox'] + label {
+			margin-right: 0;
+			padding-left: 8px;
+		}
+		input[type='checkbox'] + label:before {
+			width: 15px;
+			height: 15px;
+			background: #fff;
+			left: -18px;
+			top: 5px;
+			border: 0;
+			border-radius: 0;
+		}
+		input[type='checkbox']:checked + label:before {
+			background: url('@@img/main/icon-check.png') 50% 50% no-repeat #fff;
+		}
+	}
+}
+
+@include pc-large {
+	.main-banner {
+		.text-area { right: 25px; }
+	}
+}
+@include pc-small {
+	.main-banner {
+		.text-area { right: 70px; }
+	}
+}
+@include tab {
+	.main-banner {
+		.text-area { right: 100px; }
+	}
+}
+@include media-mob {
+	.main-banner {
+		background: linear-gradient(142deg,#78d649 33%,#00b4a8 93%);
+		z-index: 1;
+		.image {
+			height: 190px;
+			img {
+				&.pc { display: none; }
+				&.mobile { display: inline; }
+			}
+		}
+		.text-area {
+			top: 55%;
+			right: 15.5px;
+			width: 70%;
+			text-align: left;
+			word-break: keep-all;
+		}
+		h2 {
+			font-size: 22px;
+			line-height: 1.27;
+		}
+		.text { display: none; }
+		.more {
+			margin-top: 7.5px;
+			a { font-size: 14px; }
+		}
+		.hide-check {
+			width: 100%;
+			right: 14px;
+			bottom: 15px;
+			text-align: right;
+			font-size: 13px;
+			input[type='checkbox'] + label { font-size: 13px; }
+			input[type='checkbox'] + label:before {
+				width: 15px;
+				height: 15px;
+				top: 3.5px;
+				left: -15px;
+			}
+			input[type='checkbox']:checked + label:before {
+				background: url('@@img/main/icon-check-m.png') 50% 50% no-repeat #fff;
+				background-size: 11.5px 9px;
+			}
+		}
+		.btn-close {
+			@include spriteIR-2x($m-icons-banner-close);
+		}
+	}
+}
+
+@include mob {
+	.main-banner {
+		.text-area {
+			width: 60%;
+		}
+	}
+}
+
+@include mob-small {
+	.main-banner {
+		.text-area {
+			width: 53%;
+			top: 50%;
+		}
+		h2 { font-size: 20px; }
+		.more {
+			a { font-size: 12px; }
+		}
+		.hide-check { bottom: 10px; }
+	}
+}

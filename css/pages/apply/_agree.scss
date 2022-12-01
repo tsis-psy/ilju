@@ -1,0 +1,12 @@
+/* 지원신청 - 약관동의 */
+.apply-agree {
+	.textarea {
+		.button { margin-top: 5px; }
+		.text { height: 145px; }
+	}
+	.field + .button { text-align: right; }
+	
+	@include media-mob {
+		.field + .button { text-align: center; }
+	}
+}

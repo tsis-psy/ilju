@@ -1,0 +1,91 @@
+//
+// 프로젝트 공통 스타일
+// --------------------------------------------------
+
+/* Noto Sans KR */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url('../font/notosanskr/NotoSansKR-Light.woff2') format('woff2'),
+		url('../font/notosanskr/NotoSansKR-Light.woff') format('woff');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('../font/notosanskr/NotoSansKR-Regular.woff2') format('woff2'),
+		url('../font/notosanskr/NotoSansKR-Regular.woff') format('woff');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src:
+		url('../font/notosanskr/NotoSansKR-Medium.woff2') format('woff2'),
+		url('../font/notosanskr/NotoSansKR-Medium.woff') format('woff');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('../font/notosanskr/NotoSansKR-Bold.woff2') format('woff2'),
+		url('../font/notosanskr/NotoSansKR-Bold.woff') format('woff');
+}
+
+/* Godo */
+@font-face {
+	font-family: 'Godo';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('../font/godo/GodoM.woff2') format('woff2'),
+		url('../font/godo/GodoM.woff') format('woff');
+}
+@font-face {
+	font-family: 'Godo';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('../font/godo/GodoB.woff2') format('woff2'),
+		url('../font/godo/GodoB.woff') format('woff');
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+	font-size: 10px;
+}
+html,
+body { 
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	letter-spacing: -.4px;
+	-webkit-font-smoothing: antialiased;
+	color: $base-color;
+	&.noscroll { overflow: hidden; }
+}
+
+strong {
+	font-weight: 700;
+}
+
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+
+.no-scroll { overflow: hidden; }
+.dim {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #333;
+	opacity: .8;
+	z-index: 8;
+}

@@ -1,0 +1,232 @@
+/* 사이트맵 */
+.sitemap {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	background-color: #333;
+	color: #fff;
+	z-index: 13;
+	transform: translateY(-100%);
+	visibility: hidden;
+	transition: transform ease .1s;
+	&.on {
+		transform: translateY(0);
+		visibility: visible;
+		transition: transform ease .7s;
+	}
+	h2,
+	h3 { @include hidden; }
+	nav {
+		&.login {
+			max-width: 1266px;
+			.depth-1 > li { flex-basis: 16%; }
+		}
+		max-width: 844px;
+		margin: 0 auto;
+		padding: 90px 0 100px;
+	}
+	.login-menu {
+		display: none;
+	}
+	.depth-1 {
+		display: flex;
+		> li {
+			flex-basis: 25%;
+			text-align: center;
+			border-right: 1px solid #444;
+			&:last-child { border-right: 0; }
+			> a {
+				display: inline-block;
+				padding: 22px 0 30px;
+				line-height: 1.5;
+				font-size: 24px;
+				font-family: 'Godo';
+				font-weight: 400;
+				color: #74c400;
+			}
+		}
+	}
+	.depth-2 {
+		> li {
+			margin-bottom: 18px;
+			line-height: 1.5;
+			font-size: 16px;
+			font-weight: 500;
+			letter-spacing: normal;
+			> a {
+				position: relative;
+				color: #fff;
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 0;
+					display: inline-block;
+				}
+			}
+			&:hover > a,
+			&:focus > a,
+			&.active > a {
+				color: #74c400;
+				transition: ease .3s;
+				&:after {
+					width: 100%;
+					transition: ease .3s;
+				}
+			}
+		}
+	}
+	.depth-3 {
+		margin-top: 10px;
+		li {
+			margin-bottom: 10px;
+			line-height: 1.42;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: normal;
+			> a {
+				position: relative;
+				color: #c9c9c9;
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 0;
+					display: inline-block;
+				}
+				&:hover,
+				&:focus,
+				&.active {
+					color: #74c400;
+					transition: ease .3s;
+					&:after {
+						width: 100%;
+						transition: ease .3s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-mob {
+	.sitemap {
+		width: 300px;
+		height: 100%;
+		padding-bottom: 60px;
+		transform: translate(110%,0);
+		transition: .4s ease;
+		&.on {
+			transform: translate(0);
+			transition: .4s ease;
+		}
+		nav {
+			height: 100%;
+			padding: 0;
+		}
+		.login-menu {
+			display: block;
+			height: 80px;
+			padding: 22px 0 0 25px;
+			li {
+				display: inline-block;
+				font-size: 13px;
+				&.icon-login {
+					background: url('@@img/common/icon-login.png') 0 50% no-repeat;
+					background-size: 20px auto;
+					padding-left: 24.5px;
+				}
+				&.icon-join {
+					margin-left: 20px;
+					padding-left: 25px;
+					background: url('@@img/common/icon-join.png') 0 50% no-repeat;
+					background-size: 20px auto;
+				}
+				&.icon-logout {
+					padding-left: 25px;
+					background: url('@@img/common/icon-logout.png') 0 50% no-repeat;
+					background-size: 20px auto;
+				}
+			}
+		}
+		.gnav {
+			position: relative;
+			margin-left: -9px;
+			width: 300px;
+			height: calc(100% - 80px);
+			overflow: auto;
+		}
+		.depth-1 {
+			display: block;
+			height: 100%;
+			position: relative;
+			padding-top: 10px;
+			padding-left: 34px;
+			&:after {
+				position: absolute;
+				top: 0;
+				left: 140px;
+				content: '';
+				width: 1px;
+				height: 100%;
+				background-color: #444;
+			}
+			> li {
+				margin-bottom: 31px;
+				text-align: left;
+				width: 100%;
+				border-right: 0;
+				> a {
+					position: relative;
+					padding: 0;
+					font-size: 18px;
+					color: #fff;
+				}
+				&.active > a,
+				&:hover > a,
+				&:focus > a {
+					color: #74c400;
+					transition: ease .3s;
+				}
+				&.active > a:before,
+				&:focus > a:before {
+					content: '';
+					width: 20px;
+					height: 4px;
+					position: absolute;
+					top: 50%;
+					left: -34px;
+					background-color: #74c400;
+					border-radius: 5px;
+					transform: translateY(-50%);
+				}
+			}
+		}
+		.depth-2 {
+			display: none;
+			position: absolute;
+			top: 10px;
+			left: 156px;
+			z-index: 1;
+			> li {
+				margin-bottom: 15px;
+				line-height: 1.5;
+				font-size: 16px;
+				font-weight: 500;
+			}
+		}
+		.depth-3 {
+			margin-top: 8px;
+			li {
+				margin-bottom: 6px;
+				line-height: 1.5;
+				font-size: 14px;
+				font-weight: 400;
+				a { color: #c9c9c9; }
+			}
+		}
+	}
+}

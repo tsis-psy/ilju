@@ -1,0 +1,17 @@
+ul.notice-list {
+	margin-top: 50px;
+	font-size: 14px;
+	color: #757575;
+	li {
+		position: relative;
+		padding-left: 18px;
+		word-break: keep-all;
+		&:before {
+			content: '※';
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		strong { font-weight: 700; }
+	}
+}

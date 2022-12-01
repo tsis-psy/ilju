@@ -1,0 +1,95 @@
+/* 지원신청 - 온라인 상담 */
+.apply-advice {
+	&.common-container {
+		.field {
+			max-width: 700px;
+			margin: 50px auto;
+		}
+	}
+	&.section-apply {
+		.field + .button,
+		.inquiry + .button { text-align: center; }
+	}
+	.textarea .text { height: 150px; }
+	.notice {
+		max-width: 700px;
+		margin: 60px auto 0;
+		text-align: right;
+	}
+	.inquiry {
+		max-width: 700px;
+		padding: 40px 35px;
+		margin: 10px auto 50px;
+		border-top: 2px solid #033333;
+		border-bottom: 2px solid #dedede;
+
+		table {
+			width: 100%;
+
+			tr {
+				&:last-child {
+					th { padding-top: 36px; }
+					td { padding-top: 28px; }
+				}
+			}
+
+			th {
+				padding: 12px 0;
+				text-align: left;
+				vertical-align: top;
+				font-size: 16px;
+				font-weight: 500;
+				color: #757575;
+			}
+
+			td {
+				padding: 5px 0;
+
+				.info-txt {
+					margin: 10px auto 30px;
+					font-size: 14px;
+					color: #757575;
+				}
+				.textarea { padding: 20px; }
+			}
+		}
+		.tel-wrap { max-width: 520px; }
+	}
+	@include media-mob {
+		.notice {
+			margin-top: 50px;
+		}
+		.inquiry {
+			padding: 20px 10px;
+			text-align: center;
+			table {
+				display: block;  /* 07월 31일 수정 */
+				width: auto;
+				max-width: 406px; /* 07월 31일 수정 */
+				margin: 0 auto;  /* 07월 31일 수정 */
+				tbody {
+					display: block; /* 07월 31일 수정 */
+					width: 100%;
+					tr {
+						display: block;
+						&:last-child {
+							td { padding-top: 5px; }
+							th { padding-top: 10px; }
+						}
+					}
+
+					th {
+						display: block;
+						padding: 10px 0 0;
+						font-size: 14px;
+					}
+
+					td {
+						display: block;
+						max-width: 406px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,221 @@
+//
+// SASS MIXIN
+// --------------------------------------------------
+/* stylelint-disable */
+
+// clearfix
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// ellipsis
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// multiline ellipsis
+@mixin multilineEllipsis($line) {
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	-webkit-line-clamp: $line;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+}
+
+// hidden
+@mixin hidden {
+	position: absolute;
+	left: -9999px;
+}
+
+// placeholderColor
+@mixin placeholderColor($color: #b5b5b5) {
+	&::-webkit-input-placeholder { color: $color; }
+	&:-ms-input-placeholder { color: $color; }
+	&::-moz-placeholder { color: $color; opacity: 1; }
+	&:-moz-placeholder { color: $color; opacity: 1; }
+}
+
+// spriteIR - sprite 믹스인을 IR로 적용하도록 래핑하는 믹스인
+@mixin spriteIR($sprite) {
+	@include sprite($sprite);
+
+	height: 0;
+	max-height: nth($sprite, 6);
+	padding-top: nth($sprite, 6);
+	background-size: nth($sprite, 7) nth($sprite, 8);
+	overflow: hidden;
+}
+
+// afterSpriteIR - :after에 IR적용
+@mixin afterSpriteIR($sprite, $w, $h, $position:relative) {
+	width: $w;
+	height: 0;
+	max-height: $h;
+	padding-top: $h;
+	position: $position;
+	overflow: hidden;
+
+	&:after {
+		@include sprite($sprite);
+
+		content: '';
+		display: block;
+		margin: (nth($sprite, 6) / -2) 0 0 (nth($sprite, 5) / -2);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+// sprite-2x
+// gulp.spritesmith 모듈에서 생성된 스프라이트를 1/2 사이즈로 바궈서 출력해주는 믹스인
+// _icon-sprite.scss에 의존
+@mixin sprite-2x($sprite){
+	@include sprite-width-2x($sprite);
+	@include sprite-height-2x($sprite);
+	@include sprite-image($sprite);
+	@include sprite-size-2x($sprite);
+	@include sprite-position-2x($sprite);
+}
+@mixin sprite-width-2x($sprite) {
+	width: (nth($sprite, 5) / 2);
+}
+@mixin sprite-height-2x($sprite) {
+	height: (nth($sprite, 6) / 2);
+}
+@mixin sprite-size-2x($sprite) {
+	background-size: (nth($sprite, 7) / 2) (nth($sprite, 8) / 2);
+}
+@mixin sprite-position-2x($sprite) {
+	$sprite-offset-x: (nth($sprite, 3) / 2);
+	$sprite-offset-y: (nth($sprite, 4) / 2);
+	background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+// spriteIR-2x - sprite 믹스인을 IR로 적용하도록 래핑하는 믹스인
+@mixin spriteIR-2x($sprite) {
+	@include sprite-2x($sprite);
+
+	height: 0;
+	max-height: (nth($sprite, 6) / 2);
+	padding-top: (nth($sprite, 6) / 2);
+	overflow: hidden;
+}
+
+// afterSpriteIR-2x - :after에 IR적용
+@mixin afterSpriteIR-2x($sprite, $w, $h, $position:relative) {
+	box-sizing: border-box;
+	width: $w;
+	height: 0;
+	max-height: $h;
+	padding-top: $h;
+	position: $position;
+	overflow: hidden;
+
+	&:after {
+		@include sprite-2x($sprite);
+
+		content: '';
+		display: block;
+		margin: (nth($sprite, 6) / -4) 0 0 (nth($sprite, 5) / -4);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+// sprite-2x-pad
+// 아이콘 상하좌우에 안전 여백을 추가하는 믹스인
+// _icon-sprite.scss에 의존
+@mixin sprite-2x-pad($sprite){
+	@include sprite-width-2x-pad($sprite);
+	@include sprite-height-2x-pad($sprite);
+	@include sprite-image($sprite);
+	@include sprite-size-2x($sprite);
+	@include sprite-position-2x-pad($sprite);
+	background-repeat: no-repeat;
+}
+@mixin sprite-width-2x-pad($sprite) {
+	width: (nth($sprite, 5) / 2 + 2);
+}
+@mixin sprite-height-2x-pad($sprite) {
+	height: (nth($sprite, 6) / 2 + 2);
+}
+@mixin sprite-position-2x-pad($sprite) {
+	$sprite-offset-x: (nth($sprite, 3) / 2 + 1);
+	$sprite-offset-y: (nth($sprite, 4) / 2 + 1);
+	background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+// spriteIR-2x-pad
+@mixin spriteIR-2x-pad($sprite) {
+	@include sprite-2x-pad($sprite);
+
+	height: 0;
+	max-height: (nth($sprite, 6) / 2 + 2);
+	padding-top: (nth($sprite, 6) / 2 + 2);
+	overflow: hidden;
+}
+
+// afterSpriteIR-2x-pad
+@mixin afterSpriteIR-2x-pad($sprite, $w, $h, $position:relative) {
+	width: $w + 2;
+	height: 0;
+	max-height: $h + 2;
+	padding-top: $h + 2;
+	position: $position;
+	overflow: hidden;
+
+	&:after {
+		@include sprite-2x-pad($sprite);
+
+		content: '';
+		display: block;
+		margin: (nth($sprite, 6) / -4 + 1) 0 0 (nth($sprite, 5) / -4 + 1);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+//sprite-resize-pad 스프라이트를 일정 비율로 줄여주는 믹스인, 기본은 1/2
+@mixin sprite-resize-pad($sprite, $value: 2){
+	@include sprite-width-resize-pad($sprite, $value);
+	@include sprite-height-resize-pad($sprite, $value);
+	@include sprite-image($sprite);
+	@include sprite-size-resize($sprite, $value);
+	@include sprite-position-resize-pad($sprite, $value);
+	background-repeat: no-repeat;
+}
+@mixin sprite-width-resize-pad($sprite, $value) {
+	width: (nth($sprite, 5) / $value + 2);
+}
+@mixin sprite-height-resize-pad($sprite, $value) {
+	height: (nth($sprite, 6) / $value + 2);
+}
+@mixin sprite-size-resize($sprite, $value) {
+	background-size: (nth($sprite, 7) / $value) (nth($sprite, 8) / $value);
+}
+@mixin sprite-position-resize-pad($sprite, $value) {
+	$sprite-offset-x: (nth($sprite, 3) / $value + 1);
+	$sprite-offset-y: (nth($sprite, 4) / $value + 1);
+	background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+// spriteIR-2x-pad
+@mixin spriteIR-resize-pad($sprite, $value: 2) {
+	@include sprite-resize-pad($sprite, $value);
+
+	height: 0;
+	max-height: (nth($sprite, 6) / $value + 2);
+	padding-top: (nth($sprite, 6) / $value + 2);
+	overflow: hidden;
+}

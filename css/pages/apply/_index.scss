@@ -1,0 +1,360 @@
+/* 지원신청 공통 */
+.section-apply {
+	.content-wrap { opacity: 0; }
+	.step {
+		margin-top: 50px;
+		font-size: 18px;
+		font-weight: 500;
+		color: #333;
+		span {
+			margin-right: 15px;
+			padding: 5px 15px;
+			border-radius: 30px;
+			background-color: #00b4a8;
+			font-size: 16px;
+			color: #fff;
+		}
+		strong {
+			position: relative;
+			margin-left: 7px;
+			padding-left: 30px;
+			font-size: 18px;
+			color: #00b4a8;
+			&:before {
+				content: '〉〉〉';
+				position: absolute;
+				top: 4px;
+				left: 0;
+				color: #b5b5b5;
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: -6.5px;
+			}
+		}
+	}
+	.accordion {
+		margin: 40px 0;
+		background-color: #fff;
+		.required { color: #e93a3a; }
+		.title-txt {
+			margin-top: 50px;
+			&:first-of-type { margin-top: 0; }
+			+ .inner {
+				padding: 30px 10px;
+				border-top: 1px solid #dedede;
+				border-bottom: 1px solid #dedede;
+				&.school {
+					padding-bottom: 0;
+					border-bottom: 0;
+				}
+			}
+		}
+		.control-wrap {
+			&:first-of-type { margin-top: 0; }
+			.title-txt { margin-top: 0; }
+		}
+		> li {
+			border-top: 2px solid #dedede;
+			&.active {
+				border-top-color: #033333;
+				> a {
+					background-color: #f8fbf5;
+					&:before {
+						opacity: 0;
+						transform: rotate(90deg);
+					}
+				}
+			}
+			&.open {
+				> a:before {
+					opacity: 0;
+					transform: rotate(90deg);
+				}
+			}
+			&.close {
+				> a:before {
+					opacity: 1;
+					transform: rotate(0);
+				}
+			}
+			&:last-child { border-bottom: 2px solid #dedede; }
+			> a {
+				display: block;
+				position: relative;
+				padding: 23px 30px 20px;
+				font-size: 18px;
+				font-weight: 500;
+				color: #333;
+				.required {
+					margin-left: 3px;
+					position: relative;
+					top: -1px;
+					font-size: 14px;
+					color: $primary-color;
+				}
+				.ok {
+					display: none;
+					position: absolute;
+					top: 50%;
+					right: 8.5%;
+					transform: translateY(-50%);
+					padding-left: 22px;
+					font-size: 16px;
+					background: url('@@img/common/check-ok-2x.png') 0 50% no-repeat;
+					background-size: 18px 14px;
+				}
+				&:before {
+					content: '';
+					display: inline-block;
+					position: absolute;
+					top: 25px;
+					right: 41px;
+					width: 3px;
+					height: 21px;
+					background-color: #b5b5b5;
+					border-radius: 5px;
+					opacity: 1;
+					transition: all .4s;
+				}
+				&:after {
+					content: '';
+					display: inline-block;
+					position: absolute;
+					top: 34px;
+					right: 32px;
+					width: 21px;
+					height: 3px;
+					background-color: #b5b5b5;
+					border-radius: 5px;
+				}
+			}
+		}
+		.next {
+			margin-top: 40px;
+			text-align: right;
+		}
+		.input {
+			margin-bottom: 10px;
+			font-size: 0;
+			.btn { margin-left: 10px; }
+		}
+		input[type='radio'] + label:before { left: -22px; }
+		input[type='checkbox'] + label:before { left: -22px; }
+		.info-txt {
+			margin-top: 10px;
+			font-size: 14px;
+			color: #757575;
+			&.space { margin-bottom: 20px; }
+		}
+		.info-txt + .next { margin-top: 30px; }
+	}
+	.progress-status {
+		max-width: 800px;
+		margin: 100px auto 0;
+		padding: 54px 0 60px 0;
+		border-top: 2px solid $base-color;
+		border-bottom: 1px solid #dedede;
+		& + .btn-area {
+			margin-top: 40px;
+			text-align: center;
+		}
+		.tit {
+			margin-bottom: 10px;
+			color: #333;
+			font-weight: 500;
+			font-size: 20px;
+			letter-spacing: -1px;
+			text-align: center;
+		}
+		.desc {
+			color: #333;
+			font-weight: 500;
+			font-size: 28px;
+			letter-spacing: -.7px;
+			text-align: center;
+			span { color: $primary-color; }
+		}
+		.info {
+			margin-top: 20px;
+			font-size: 16px;
+			letter-spacing: -.4px;
+			text-align: center;
+			span { display: block; }
+		}
+		.date {
+			margin-top: 40px;
+			font-weight: 500;
+			color: #333;
+			font-size: 18px;
+			letter-spacing: -.5px;
+			text-align: center;
+		}
+	}
+	.accordion + .button,
+	.field + .button {
+		text-align: right;
+		font-size: 0;
+	}
+	.mark-status {
+		min-width: 80px;
+		height: 30px;
+		font-size: 14px;
+		border-radius: 30px;
+		line-height: 2.14;
+	}
+
+	@include pc-small {
+		.accordion {
+			input[type='text'] {
+				padding: 0 10px;
+				font-size: 14px;
+				&.search {
+					padding: 0 40px 0 10px;
+				}
+			}
+			select {
+				padding: 0 22px 0 10px;
+				font-size: 14px;
+				background-size: 12px auto;
+				background-position: calc(100% - 10px) 50%;
+			}
+		}
+	}
+
+	@include tab {
+		.accordion {
+			input[type='text'], select { font-size: 13px; }
+		}
+	}
+
+	@include media-mob {
+		.step {
+			margin-top: 30px;
+			font-size: 14px;
+			span {
+				margin-right: 7px;
+				padding: 3px 10px;
+				font-size: 14px;
+			}
+			strong {
+				margin-left: 3px;
+				padding-left: 23px;
+				font-size: 14px;
+				&:before {
+					top: 2px;
+					font-size: 12px;
+				}
+			}
+		}
+		.accordion {
+			li {
+				& > a {
+					padding: 20px 10px;
+					&:after {
+						width: 17px;
+						top: calc(50% - 1.5px);
+						right: 10px;
+					}
+					&:before {
+						height: 17px;
+						top: calc(50% - 8.5px);
+						right: 17px;
+					}
+				}
+			}
+			table {
+				tr:first-child {
+					th { padding-top: 0; }
+				}
+				tr:last-child {
+					td { padding-bottom: 0; }
+				}
+				th {
+					display: block;
+					padding: 10px 0 0;
+					text-align: left;
+					font-size: 14px;
+				}
+
+				td {
+					display: block;
+					&.btm-space {
+						padding-bottom: 5px;
+					}
+				}
+			}
+			.info-txt {
+				margin: 5px 0 0 10px;
+				font-size: 12px;
+				&.space { margin-bottom: 0; }
+			}
+			.input {
+				display: flex;
+				.btn {
+					flex-shrink: 0;
+				}
+			}
+			input[type='text'] {
+				font-size: 14px;
+				padding: 0 15px;
+			}
+			select {
+				font-size: 14px;
+				padding: 0 30px 0 15px;
+				background-size: 15px auto;
+				background-position: calc(100% - 12px) 50%;
+			}
+		}
+		.progress-status {
+			margin: 50px auto 0;
+			padding: 27px 0 30px 0;
+			.tit { font-size: 16px; }
+			.desc { font-size: 20px; }
+			.info { font-size: 14px; }
+			.date { font-size: 16px; }
+		}
+		.field + .button {
+			text-align: center;
+			.btn:last-child {
+				margin-right: 0;
+			}
+		}
+		.accordion + .button,
+		.field + .button {
+			text-align: center;
+		}
+	}
+
+	@include mob-large {
+		.accordion {
+			> li > a .ok { right: 15%; }
+		}
+	}
+
+	@include mob-mid {
+		.step {
+			span {
+				display: block;
+				width: 70px;
+				margin-bottom: 5px;
+				text-align: center;
+			}
+		}
+		.view-btn {
+			.btn.large { padding: 0 24px; }
+		}
+	}
+
+	@include mob-small {
+		.accordion {
+			> li > a {
+				padding: 20px 15px;
+				font-size: 16px;
+				.ok { font-size: 14px; }
+			}
+		}
+		.view-btn {
+			.btn.large { padding: 0 18px; }
+		}
+	}
+}

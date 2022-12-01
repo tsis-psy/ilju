@@ -1,0 +1,123 @@
+.breadcrumb {
+	display: flex;
+	height: 62px;
+	padding-left: 30px;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+
+	.list {
+		display: flex;
+		flex-direction: row;
+		max-width: 1920px;
+		width: 100%;
+		margin: 0 auto;
+
+		> li {
+			position: relative;
+
+			&.on {
+				height: auto;
+
+				li.on a { color: #7db72c; }
+			}
+
+			&.home a {
+				display: block;
+				width: 60px;
+				height: 100%;
+				position: relative;
+				border-left: 1px solid #dedede;
+				border-right: 1px solid #dedede;
+				span {
+					display: inline-block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					@include spriteIR($icons-breadcrumb-home);
+				}
+			}
+
+			&:not(.home) {
+				> a {
+					box-sizing: border-box;
+					display: block;
+					min-width: 218px;
+					min-height: 60px;
+					padding: 17px 60px 17px 30px;
+					border-right: 1px solid #dedede;
+					font-weight: 400;
+					font-size: 16px;
+					color: $base-color;
+					position: relative;
+	
+					&:after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						right: 20px;
+						transform: translateY(-50%);
+						@include spriteIR-2x($icons-arrow-down-2x);
+					}
+				}
+
+				&.on > a:after { @include spriteIR-2x($icons-arrow-up-2x); }
+			}
+
+			&.depth-2 {
+				> li {
+					.sub-list { display: none; }
+				}
+			}
+		}
+	}
+
+	.sub-list {
+		display: none;
+		box-sizing: border-box;
+		width: calc(100% + 1px);
+		padding: 14px 0 24px;
+		border-left: 1px solid #dedede;
+		border-right: 1px solid #dedede;
+		border-bottom: 1px solid #dedede;
+		position: relative;
+		left: -1px;
+		background-color: #fff;
+		overflow: hidden;
+		z-index: 2;
+
+		li {
+			margin-top: 18px;
+			
+			&:first-child { margin-top: 0; }
+			&.on a { color: #7db72c; }
+		}
+
+		a {
+			box-sizing: border-box;
+			display: block;
+			min-width: 216px;
+			padding: 0 30px;
+			font-size: 16px;
+			font-weight: 400;
+			color: $base-color;
+
+			&:hover { color: #7db72c; }
+		}
+	}
+
+	.current {
+		display: none;
+		box-sizing: border-box;
+		min-width: 218px;
+		min-height: 60px;
+		padding: 17px 20px;
+		font-size: 16px;
+		font-weight: 500;
+		color: $base-color;
+	}
+}
+
+@include media-mob {
+	.breadcrumb { display: none; }
+}

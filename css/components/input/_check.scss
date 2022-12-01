@@ -1,0 +1,123 @@
+input[type='checkbox'] {
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	opacity: 0;
+	+ label {
+		vertical-align: middle;
+		padding-left: 7px;
+		margin-right: 10px;
+		line-height: 1.62;
+		font-size: 16px;
+		position: relative;
+		&:before {
+			content: '';
+			box-sizing: border-box;
+			position: absolute;
+			width: 22px;
+			height: 22px;
+			left: -25px;
+			top: calc(50% - 11px);
+			border: 2px solid #b5b5b5;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+	}
+	&:checked + label:before {
+		border: 0;
+		background: url('@@img/common/check-on-2x.png') 50% 42% no-repeat $primary-color;
+		background-size: 14px 14px;
+	}
+	&:disabled + label:before {
+		background-color: #dedede;
+		border: 0;
+	}
+	&:disabled:checked + label:before {
+		background: url('@@img/common/check-dis-on-2x.png') 50% 42% no-repeat #ebebeb;
+		background-size: 14px 14px;
+	}
+
+}
+label.check {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	line-height: 1.62;
+	font-size: 16px;
+	padding-left: 32px;
+	margin-right: 10px;
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		width: 22px;
+		height: 22px;
+		+ span:before {
+			content: '';
+			box-sizing: border-box;
+			position: absolute;
+			width: 22px;
+			height: 22px;
+			left: 0;
+			top: calc(50% - 11px);
+			border: 2px solid #b5b5b5;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+		&:checked + span:before {
+			border: 0;
+			background: url('@@img/common/check-on-2x.png') 50% 42% no-repeat $primary-color;
+			background-size: 14px 14px;
+		}
+		&:disabled + span:before {
+			background-color: #dedede;
+			border: 0;
+		}
+		&:disabled:checked + span:before {
+			background: url('@@img/common/check-dis-on-2x.png') 50% 42% no-repeat #ebebeb;
+			background-size: 14px 14px;
+		}
+	}
+}
+.check-only {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	height: 22px;
+	input {
+		position: absolute;
+		opacity: 0;
+		+ span {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 22px;
+			height: 22px;
+			border: 2px solid #b5b5b5;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+		&:checked + span {
+			border: 0;
+			background: url('@@img/common/check-on-2x.png') 50% 42% no-repeat $primary-color;
+			background-size: 14px 14px;
+		}
+		&:disabled + span {
+			background-color: #dedede;
+			border: 0;
+		}
+		&:disabled:checked + span {
+			background: url('@@img/common/check-dis-on-2x.png') 50% 42% no-repeat #ebebeb;
+			background-size: 14px 14px;
+		}
+	}
+}
+
+@include media-mob {
+	input[type=checkbox] {
+		+ label {
+			font-size: 14px;
+		}
+	}
+	label.check { font-size: 14px; }
+}

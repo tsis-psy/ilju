@@ -1,0 +1,231 @@
+/* 지원서 미리보기 팝업 */
+.popup-content-default {
+	&.apply-preview {
+		> .inner { /* 200924 추가 */
+			height: calc(100vh - 110px);
+			overflow-y: scroll;
+		}
+		.tit {
+			padding-top: 60px;
+			font-size: 36px;
+			font-weight: bold;
+			text-align: center;
+			letter-spacing: -1.8px;
+			color: #333;
+			span { color: $primary-color; }
+		}
+		.receipt-num {
+			font-size: 16px;
+			text-align: right;
+			color: #333;
+			strong { font-weight: 500; }
+		}
+		.con {
+			padding: 0;
+			.voluntary-service {
+				.title {
+					margin-top: 40px;
+					margin-bottom: 10px;
+					font-size: 1.8rem;
+					font-weight: 700;
+					text-align: left;
+					letter-spacing: -.045rem;
+				}
+				.cont {
+					padding: 10px 15px;
+					font-weight: 500;
+					text-align: left;
+					border-top: 2px solid #212121;
+					border-bottom: 1px solid #dedede;
+				}
+			}
+		}
+		.table-wrap table th { padding: 8px 12px; }
+	}
+	.summit {
+		padding: 40px 0;
+		border-top: 1px solid #dedede;
+		.cont {
+			font-size: 22px;
+			font-weight: 500;
+			letter-spacing: -1.1px;
+			color: #333;
+			span { color: $primary-color; }
+		}
+		.info {
+			margin-top: 25px;
+			font-weight: 500;
+			span {
+				margin-right: 40px;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+.popup-table {
+	.title {
+		margin-top: 5px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: left;
+		letter-spacing: -.45px;
+		&:not(.first) { margin-top: 40px; }
+	}
+	&.personal-info {
+		.col01,
+		.col03 { width: 157px; }
+		.col02,
+		.col04 { width: auto; }
+		.col05 { width: 210px; }
+		th {
+			padding: 10px 0 10px 15px;
+			font-size: 14px;
+			text-align: left;
+		}
+		td {
+			padding: 10px 0 10px 15px;
+			font-size: 14px;
+			text-align: left;
+			border-bottom: 1px solid #dedede;
+			letter-spacing: -.35px;
+			color: #333;
+			&:nth-child(2n) {
+				border-right: none;
+			}
+			&.photo {
+				text-align: center;
+				img {
+					width: 180px;
+					height: 212px;
+				}
+			}
+		}
+	}
+	.table-wrap table td.left {
+		&.family { padding-bottom: 5px; }
+	}
+	&:last-of-type {
+		margin-bottom: 40px;
+	}
+}
+
+@media print {
+	.popup-content-default.apply-preview {
+		margin: 0;
+		width: 21cm;
+		min-height: 29.7cm;
+		border: initial;
+		box-shadow: initial;
+		background: initial;
+		.title-bar { display: none; }
+		.tit { font-size: 24px; }
+		.receipt-num { font-size: 13px; }
+		.popup-table { page-break-inside: avoid; }
+		.table-wrap {
+			page-break-inside: avoid;
+			padding-top: 1px;
+			table {
+				th {
+					padding: 5px 10px;
+					font-size: 11px;
+				}
+				td {
+					padding: 5px 10px;
+					font-size: 11px;
+					background-color: #fff;
+				}
+			}
+		}
+		.con {
+			.voluntary-service {
+				.title {
+					font-size: 14px;
+					font-weight: 500;
+					margin-top: 0;
+					margin-bottom: 5px;
+					padding-top: 40px;
+				}
+				.cont { font-size: 11px; }
+			}
+		}
+		.check-list > li.only-text {
+			height: 24px;
+			line-height: 2.1;
+			label.check {
+				height: 24px;
+				line-height: 2.1;
+			}
+		}
+		label.check {
+			font-size: 11px;
+			padding-left: 25px;
+			input:disabled {
+				&:checked {
+					+ span:before {
+						width: 18px;
+						height: 18px;
+						top: calc(50% - 9px);
+						background-size: 10px auto;
+					}
+				}
+				+ span:before {
+					width: 18px;
+					height: 18px;
+					top: calc(50% - 9px);
+				}
+			}
+		}
+		input[type='text'] {
+			width: 60px;
+			height: 24px;
+			font-size: 11px;
+		}
+		.info-define {
+			.title { font-size: 14px; }
+			.inner {
+				margin-top: 0;
+				padding-top: 10px;
+				dt { font-size: 13px; }
+				dd { font-size: 11px; }
+			}
+		}
+		.summit {
+			.cont { font-size: 16px; }
+			.info { font-size: 12px; }
+		}
+		.btn-area { display: none; }
+	}
+	.popup-table {
+		&:last-of-type { margin-bottom: 0; }
+		&.personal-info {
+			.col01,
+			.col03 { width: 15%; }
+			.col05 { width: 20%; }
+			td.photo {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+		&.emergency-contact {
+			+ .info-define { margin-top: 0; }
+		}
+		.title {
+			margin-top: 0;
+			margin-bottom: 5px;
+			padding-top: 50px;
+			font-size: 14px;
+			&:not(.first) {
+				margin-top: 0;
+				padding-top: 40px;
+			}
+		}
+	}
+	@page {
+		size: A4;
+		margin: 0;
+	}
+}

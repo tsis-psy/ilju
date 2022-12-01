@@ -1,0 +1,116 @@
+//
+// 미디어 쿼리 MIXIN
+// --------------------------------------------------
+
+// global media query
+@mixin media-rem {
+	html {	
+		// pc
+		@media all and (max-width: 1440px) { font-size: 10px; }
+		@media all and (max-width: 1200px) { font-size: 10px; }
+		@media all and (max-width: 1024px) { font-size: 9.5px; }
+
+		// mob
+		@media all and (max-width: 940px) { font-size: 12px; }
+		@media all and (max-width: 768px) { font-size: 11.5px; }
+		@media all and (max-width: 640px) { font-size: 11px; }
+		@media all and (max-width: 480px) { font-size: 10.5px; }
+		@media all and (max-width: 375px) { font-size: 10.2px; }
+		@media all and (max-width: 360px) { font-size: 10.1px; }
+		@media all and (max-width: 320px) { font-size: 10px; }
+	}
+}
+
+// PC -> MOB 분기
+@mixin media-mob {
+	@media all and (max-width: 940px) {
+		@content;
+	}
+}
+
+// Break Point (Desktop First 기준 내림차순 설정)
+$desktop-l-width	: 1440px;
+$desktop-s-width	: 1200px;
+$tablet-l-width		: 1024px;
+$tablet-s-width		: 768px;
+$mob-l-width		: 640px;
+$mob-m-width		: 480px;
+$mob-s-width		: 359px;
+
+//1920px 이상 full size
+@mixin full-size {
+	@media all and (min-width: 1921px) {
+		@content;
+	}
+}
+
+// only PC
+@mixin pc-only {
+	@media all and (min-width: $tablet-l-width + 1), print {
+		@content;
+	}
+}
+@mixin pc-large {
+	@media all and (max-width: $desktop-l-width) {
+		@content;
+	}
+}
+@mixin pc-small {
+	@media all and (max-width: $desktop-s-width) {
+		@content;
+	}
+}
+
+// --------------------------------------------------
+
+// 태블릿 가로
+@mixin tab {
+	@media all and (max-width: $tablet-l-width) {
+		@content;
+	}
+}
+// only 태블릿
+@mixin tab-only {
+	@media screen and (min-width: $tablet-s-width) and (max-width: $tablet-l-width) {
+		@content;
+	}
+}
+// 모바일
+@mixin mob {
+	@media all and (max-width: $tablet-s-width) {
+		@content;
+	}
+}
+// 모바일 large
+@mixin mob-large {
+	@media screen and (max-width: $mob-l-width) {
+		@content;
+	}
+}
+// 모바일 mid
+@mixin mob-mid {
+	@media screen and (max-width: $mob-m-width) {
+		@content;
+	}
+}
+// 모바일 small
+@mixin mob-small {
+	@media screen and (max-width: $mob-s-width) {
+		@content;
+	}
+}
+
+// --------------------------------------------------
+
+// 모바일 min
+@mixin mob-min {
+	@media screen and (min-width: $mob-s-width) {
+		@content;
+	}
+}
+// 모바일 max
+@mixin mob-max {
+	@media screen and (min-width: $tablet-s-width) {
+		@content;
+	}
+}

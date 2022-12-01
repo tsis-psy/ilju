@@ -1,0 +1,128 @@
+/* 여러 페이지에서 공통으로 쓰이는 팝업 */
+.popup-content-default {
+	.upload-file {
+		.file-attach {
+			.btn {
+				min-width: 110px;
+				padding: 0 10px;
+			}
+		}
+		.comment {
+			display: flex;
+			flex-direction: row;
+			margin-top: 10px;
+			font-weight: 300;
+			color: #333;
+			font-size: 14px;
+			text-align: left;
+			.tit { flex-shrink: 0; }
+			.desc {
+				flex-grow: 1;
+				padding-left: 3px;
+			}
+		}
+		.preview {
+			margin-top: 20px;
+			.img {
+				width: 180px;
+				height: 212px;
+				margin: 0 auto;
+				background-color: #f5f5f5;
+				position: relative;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					@include spriteIR($icons-user-face);
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+	/* 사진 등록 */
+	&.photo-upload { max-width: 460px; }
+
+	/* 푸터 팝업 */
+	&.terms {
+		text-align: left;
+		.title-txt {
+			position: relative;
+			select {
+				position: absolute;
+				top: -5px;
+				right: 0;
+				max-width: 170px;
+				font-weight: 400;
+			}
+		}
+		> .inner {
+			padding: 50px 50px 0;
+			> .con { padding: 0; }
+			> .btn-area {
+				border-top: 0;
+				text-align: center;
+			}
+		}
+		.field {
+			padding: 30px 0;
+			border-top: 2px solid $base-color;
+			border-bottom: 2px solid #dedede;
+		}
+		.field-inner {
+			height: 560px;
+			overflow: auto;
+		}
+		.bold {
+			font-weight: 700;
+			span { color: $primary-color; }
+		}
+		.info-box {
+			margin: 10px 0;
+			border: 1px solid #dedede;
+			border-radius: 6px;
+			padding: 25px;
+			li {
+				margin-top: 10px;
+				.title {
+					font-weight: 500;
+					span { font-weight: 300; }
+				}
+				&:first-child { margin-top: 0; }
+			}
+		}
+		ol {
+			padding-left: 10px;
+		}
+
+		@include media-mob {
+			.title-txt {
+				select { top: -10px; }
+			}
+		}
+
+		@include mob {
+			.title-txt {
+				select {
+					display: block;
+					position: static;
+					margin-top: 10px;
+				}
+			}
+		}
+
+		@include mob-large {
+			> .inner {
+				padding: 30px 30px 0;
+			}
+		}
+	}
+}

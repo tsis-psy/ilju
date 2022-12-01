@@ -1,0 +1,1170 @@
+/* 재단소개 공통 */
+/* .section-intro {
+} */
+
+/* 인사말 */
+.intro-greeting,
+.intro-founder {
+	.full-visual {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 55%;
+			height: 100%;
+			top: calc(10% - -40px);
+			right: 0;
+			background-color: #eeeeee48;
+		}
+		.image {
+			flex: 1;
+			img {
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+		.cont {
+			flex: 1;
+			padding-left: 100px;
+			margin: 170px -280px 0 0;
+			.message {
+				margin-bottom: 40px;
+				font-size: 24px;
+				font-weight: 700;
+				letter-spacing: .6px;
+				color: #7db72c;
+			}
+			.tit {
+				margin-bottom: 30px;
+				font-size: 60px;
+				font-weight: 700;
+				line-height: 1.35;
+				letter-spacing: -1.35px;
+			}
+			.desc {
+				max-width: 55%;
+				word-break: break-all;
+				text-align: justify;
+				font-size: 18px;
+				line-height: 1.78;
+				letter-spacing: -.45px;
+				span { display: inline; }
+			}
+		}
+	}
+
+	@media all and (max-width: 1680px) {
+		.full-visual {
+			.cont {
+				padding-left: 85px;
+				margin: 155px -260px 0 0;
+				.message {
+					margin-bottom: 37px;
+					font-size: 21px;
+				}
+				.tit {
+					margin-bottom: 28px;
+					font-size: 53px;
+					line-height: 1.32;
+				}
+				.desc {
+					font-size: 16px;
+					line-height: 1.73;
+				}
+			}
+		}
+	}
+
+	@include pc-large {
+		.full-visual {
+			.cont {
+				padding-left: 70px;
+				margin: 140px -240px 0 0;
+				.message {
+					margin-bottom: 33px;
+					font-size: 18px;
+				}
+				.tit {
+					margin-bottom: 26px;
+					font-size: 46px;
+					line-height: 1.28;
+				}
+				.desc {
+					font-size: 14px;
+					line-height: 1.67;
+				}
+			}
+		}
+	}
+
+	@include pc-small {
+		.full-visual {
+			.cont {
+				padding-left: 55px;
+				margin: 130px -185px 0 0;
+				.message {
+					margin-bottom: 30px;
+					font-size: 16px;
+				}
+				.tit {
+					margin-bottom: 25px;
+					font-size: 42px;
+				}
+				.desc { font-size: 13px; }
+			}
+		}
+	}
+
+	@include tab {
+		.full-visual {
+			.cont {
+				padding-left: 50px;
+				margin: 125px -180px 0 0;
+				.message {
+					margin-bottom: 28px;
+					font-size: 15px;
+				}
+				.tit {
+					margin-bottom: 24px;
+					font-size: 39px;
+				}
+				.desc { font-size: 12px; }
+			}
+		}
+	}
+
+	@include media-mob {
+		.full-visual {
+			overflow: hidden;
+			padding-bottom: 40px;
+			&:before {
+				width: 100%;
+				top: calc(50% - 100px);
+				left: 25px;
+			}
+			.cont {
+				padding: 0;
+				margin: 80.7% 0 0 -86%;
+				.message {
+					margin: 30px 0 12px;
+					font-size: 16px;
+				}
+				.tit { font-size: 32px; }
+				.desc {
+					font-size: 14px;
+					max-width: 70%;
+				}
+			}
+		}
+	}
+
+	@include mob-large {
+		.full-visual {
+			&:before { top: calc(50% - 130px); }
+			.cont {
+				margin: 80.7% 0 0 -83%;
+				.desc {
+					padding-right: 58px;
+					max-width: 100%;
+					span {
+						&.par { display: inline; }
+					}
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 490px) {
+		.full-visual {
+			&:before { top: calc(50% - 200px); }
+			.cont { margin: 79.5% -2% 0 -80%; }
+		}
+	}
+
+	@include mob-small {
+		.full-visual {
+			&:before {
+				top: calc(50% - 300px);
+				left: 35px;
+			}
+			.cont {
+				margin: 79.5% -9% 0 -75%;
+				.desc {
+					span {
+						&.par { display: inline; }
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 설립취지 */
+.intro-purpose {
+	.intro-quote {
+		padding: 52px 32px 60px;
+		border-top: 2px solid #000;
+		border-bottom: 2px solid #f2f9e7;
+		border-bottom: 1px solid #f2f9e7;
+		.comment {
+			line-height: 1.7;
+			color: $base-color;
+			font-weight: 500;
+			font-size: 20px;
+			letter-spacing: -.025em;
+			text-align: center;
+		}
+		.name {
+			margin-top: 22px;
+			color: $base-color;
+			font-weight: 400;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+	.support-list {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 90px;
+		.item {
+			box-sizing: border-box;
+			width: 25%;
+			padding: 0 10px;
+			&.scholarship .tit { background-image: url('@@img/intro/purpose-scholarship.png'); }
+			&.academic .tit { background-image: url('@@img/intro/purpose-academic.png'); }
+			&.culture .tit { background-image: url('@@img/intro/purpose-culture.png'); }
+			&.welfare .tit { background-image: url('@@img/intro/purpose-welfare.png'); }
+		}
+		.tit {
+			display: flex;
+			flex-direction: column;
+			padding-top: 220px;
+			background: url('@@img/intro/purpose-scholarship.png') no-repeat;
+			background-size: 138px auto;
+			background-position: center top;
+			.sub {
+				margin-bottom: 2px;
+				color: #ebebeb;
+				font-weight: 700;
+				font-size: 24px;
+				text-align: center;
+			}
+			.main {
+				color: $base-color;
+				font-weight: 500;
+				font-size: 48px;
+				text-align: center;
+			}
+		}
+		.desc {
+			line-height: 1.67;
+			padding-top: 36px;
+			color: $base-color;
+			font-weight: 400;
+			font-size: 18px;
+			text-align: center;
+			position: relative;
+		}
+	}
+
+	@include tab {
+		.support-list {
+			.item {
+				width: 50%;
+				&:nth-child(n + 3) { margin-top: 50px; }
+			}
+		}
+	}
+
+	@include media-mob {
+		.content-wrap { width: calc(100% - 30px); }
+		.intro-quote {
+			padding: 30px 10px;
+			.comment {
+				line-height: 1.5;
+				font-size: 16px;
+			}
+			.name {
+				margin-top: 20px;
+				font-size: 13px;
+			}
+		}
+		.support-list {
+			margin-top: 40px;
+			.tit {
+				padding-top: 79px;
+				background-size: 69px auto;
+				.sub { font-size: 20px; }
+				.main { font-size: 35px; }
+			}
+			.desc {
+				line-height: 1.46;
+				padding-top: 30px;
+				margin-top: 6px;
+				font-size: 14px;
+				&:before { height: 23px; }
+			}
+		}
+	}
+
+	@include mob-mid {
+		.support-list {
+			.item {
+				width: 100%;
+				padding: 0;
+				&:not(:first-child) { margin-top: 50px; }
+			}
+		}
+	}
+}
+
+/* 재단연혁 */
+.intro-history {
+	.company-history {
+		margin-top: 30px;
+		& + .company-history { margin-top: 110px; }
+		.visual {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			.left {
+				width: 246px;
+				height: 40px;
+				margin-bottom: 30px;
+				background-repeat: no-repeat;
+				background-size: auto 100%;
+				background-position: left center;
+			}
+			.right {
+				width: 253px;
+				height: 40px;
+				margin-bottom: 30px;
+				background-repeat: no-repeat;
+				background-size: auto 100%;
+				background-position: right center;
+			}
+			.full {
+				width: 100%;
+				height: 300px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				&.pc { display: block; }
+				&.mob { display: none; }
+			}
+		}
+		.content {
+			width: 50%;
+			margin: 70px 0 0 auto;
+			.year {
+				display: flex;
+				flex-direction: row;
+				padding: 0 0 60px 26px;
+				position: relative;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 12px;
+					left: -7px;
+					@include sprite($icons-bullet-history);
+				}
+				&:after {
+					content: '';
+					display: block;
+					width: 1px;
+					height: calc(100% - 24px);
+					background-color: #dedede;
+					position: absolute;
+					top: 30px;
+					left: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+					&:after { content: none; }
+				}
+			}
+			.tit {
+				flex-shrink: 1;
+				width: 95px;
+				min-width: 0;
+				color: $base-color;
+				font-weight: 700;
+				font-size: 24px;
+			}
+			.con {
+				flex-grow: 0;
+				width: calc(100% - 95px);
+				padding-left: 10px;
+			}
+			.list {
+				padding-top: 4px;
+				li {
+					color: $base-color;
+					font-weight: 400;
+					font-size: 20px;
+					word-wrap: break-word;
+				}
+			}
+		}
+		@include media-mob {
+			margin-top: 0;
+			& + .company-history { margin-top: 50px; }
+			.visual {
+				.left,
+				.right { display: none; }
+				.active {
+					display: block;
+					width: 150px;
+					margin: 0 auto 15px auto;
+					background-size: 100% auto;
+				}
+				.full {
+					height: 170px;
+					&.pc { display: none; }
+					&.mob { display: block; }
+				}
+			}
+			.content {
+				width: 100%;
+				margin: 30px 0 0;
+				.year {
+					padding: 0 0 15px 27px;
+					&:before {
+						height: 0;
+						top: 4px;
+						left: 5px;
+						@include sprite-resize-pad($icons-bullet-history-2x, 2);
+					}
+					&:after {
+						top: 22px;
+						left: 12px;
+					}
+				}
+				.tit {
+					width: 45px;
+					font-size: 14px;
+				}
+				.con {
+					width: calc(100% - 57px);
+					padding: 0 0 0 7px;
+				}
+				.list {
+					padding-top: 0;
+					li {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* 사업실적-지원현황 */
+.intro-status {
+	.status-chart {
+		display: flex;
+		flex-direction: row;
+		max-width: 1200px;
+		margin: 0 auto;
+		background-color: rgba(245,245,245,.7);
+		.scholarship {
+			width: 40%;
+			padding: 50px 30px;
+			.title {
+				color: $primary-color;
+				font-weight: 500;
+				font-size: 28px;
+				text-align: center;
+				span {
+					color: $base-color;
+					font-size: 24px;
+				}
+			}
+		}
+		.business {
+			width: 60%;
+			padding: 50px 30px;
+			border-left: 1px solid #e2e2e2;
+			.title {
+				color: #00b4a8;
+				font-weight: 500;
+				font-size: 28px;
+				text-align: center;
+				span {
+					color: $base-color;
+					font-size: 24px;
+				}
+			}
+		}
+		.list {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: 20px;
+			li {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 20px;
+				position: relative;
+				&:not(:first-child) { margin-left: 20px; }
+			}
+			.tit {
+				margin-top: 15px;
+				color: $base-color;
+				font-weight: 400;
+				font-size: 20px;
+				text-align: center;
+			}
+			.con {
+				width: 100%;
+				text-align: center;
+				position: absolute;
+				top: 60px;
+				left: 0;
+			}
+			.value {
+				color: $base-color;
+				font-weight: 700;
+				font-size: 42px;
+			}
+			.unit {
+				color: $base-color;
+				font-weight: 500;
+				font-size: 24px;
+			}
+			.add {
+				display: block;
+				color: $base-color;
+				font-weight: 400;
+				font-size: 16px;
+			}
+			.chart {
+				position: relative;
+			}
+			canvas {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	.content-wrap {
+		.title {
+			margin: 80px 0 20px 0;
+			color: $base-color;
+			font-weight: 700;
+			font-size: 20px;
+		}
+		.table-wrap {
+			border-top: 2px solid $base-color;
+			table {
+				th {
+					height: 70px;
+					font-weight: 500;
+					font-size: 18px;
+					background-color: #f9f9f9;
+				}
+				td {
+					height: 70px;
+					color: $base-color;
+					font-weight: 400;
+				}
+			}
+			&.pc { display: block; }
+			&.mob { display: none; }
+		}
+	}
+
+	@include tab {
+		.status-chart {
+			flex-direction: column;
+			padding: 40px 10px;
+			.scholarship {
+				width: 100%;
+				padding: 0;
+				.title { margin-bottom: 10px; }
+			}
+			.business {
+				width: 100%;
+				padding: 0;
+				margin-top: 20px;
+				border-left: none;
+				.title { margin-bottom: 10px; }
+			}
+			.list {
+				li {
+					width: 30%;
+					margin-top: 10px;
+					&:not(:first-child) { margin-left: 3.33%; }
+				}
+				.con {
+					top: 38%;
+					transform: translateY(-50%);
+				}
+				.chart {
+					width: 100% !important;
+					height: 0 !important;
+					max-height: 0;
+					padding-top: 100%;
+				}
+				canvas {
+					width: 100% !important;
+					height: 100% !important;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			
+		}
+	}
+
+	@include media-mob {
+		.status-chart {
+			.scholarship {
+				.title {
+					font-size: 16px;
+					span { font-size: 14px; }
+				}
+			}
+			.business {
+				.title {
+					font-size: 16px;
+					span { font-size: 14px; }
+				}
+			}
+			.list {
+				margin-top: 0;
+				.value { font-size: 25px; }
+				.unit { font-size: 14px; }
+				.add { font-size: 10px; }
+				.tit { font-size: 13px; }
+			}
+		}
+		.content-wrap {
+			.title {
+				margin: 40px 0 9px;
+				font-size: 16px;
+			}
+			.table-wrap {
+				table {
+					th {
+						height: 40px;
+						font-size: 14px;
+					}
+					td {
+						height: 40px;
+						font-size: 14px;
+					}
+				}
+				&.pc { display: none; }
+				&.mob { display: block; }
+			}
+		}
+	}
+}
+
+/* 사업실적-운영보고 */
+.intro-manage {
+	.manage-report {
+		&.pc {
+			display: block;
+			.title {
+				margin-bottom: 20px;
+				color: $base-color;
+				font-weight: 700;
+				font-size: 20px;
+			}
+		}
+		&.mob { display: none; }
+
+		.table.report-pc {
+			table {
+				border-collapse: separate;
+				border-spacing: 0;
+			}
+			th {
+				height: 70px;
+				padding: 18px 20px;
+				color: #333;
+				background-color: #f9f9f9;
+			}
+			td {
+				height: 70px;
+				padding: 18px 20px;
+				border-left: 1px solid $border-color;
+				font-weight: 400;
+				text-align: right;
+				&.tit {
+					border-left: none;
+					border-bottom: 1px solid #000;
+					font-weight: 500;
+					text-align: center;
+				}
+				&.sub-tit { text-align: center; }
+			}
+			.total td {
+				border-bottom: 1px solid #000;
+				background-color: #f8fbf5;
+			}
+			.download td {
+				border-bottom: 1px solid #000;
+				text-align: center;
+				&:first-child { border-left: none; }
+			}
+		}
+	}
+
+	@include media-mob {
+		.manage-report {
+			&.pc { display: none; }
+			&.mob {
+				display: block;
+			}
+			.title {
+				margin-bottom: 11px;
+				color: $base-color;
+				font-weight: 700;
+				font-size: 16px;
+			}
+			.table.report-mob {
+				table {
+					border-collapse: separate;
+					border-spacing: 0;
+				}
+				td {
+					height: 44px;
+					padding: 10px;
+					border-left: 1px solid #dedede;
+					font-weight: 400;
+					font-size: 14px;
+					&:last-child { text-align: right; }
+				}
+				.tit {
+					border-left: none;
+					border-bottom: 1px solid #000;
+					background-color: #f9f9f9;
+					font-weight: 500;
+				}
+				.sub-tit {
+					background-color: #f9f9f9;
+					font-weight: 500;
+				}
+				.total td {
+					border-bottom: 1px solid #000;
+				}
+				.download td {
+					border-bottom: 1px solid #000;
+					&:first-child {
+						border-left: none;
+						background-color: #f9f9f9;
+					}
+					&:last-child { text-align: center; }
+				}
+			}
+		}
+	}
+}
+
+/* 설립자소개 */
+.intro-founder {
+	.full-visual {
+		.cont {
+			padding-left: 90px;
+			margin: 190px -220px 0 0;
+			.tit {
+				font-size: 32px;
+				letter-spacing: -.8px;
+			}
+			.desc {
+				letter-spacing: -.7px;
+				max-width: 65%;
+			}
+			.quote {
+				margin-top: 20px;
+				font-size: 16px;
+				letter-spacing: -.4px;
+			}
+			.more { display: none; }
+		}
+		&:before {
+			width: 58%;
+			top: calc(10% - -20px);
+		}
+	}
+	.content-wrap {
+		.btn-wrap {
+			margin-top: 140px;
+			text-align: right;
+		}
+		.profile {
+			display: flex;
+			flex-direction: row;
+			margin-top: 40px;
+			.life {
+				flex: 1;
+				margin-right: 55px;
+			}
+			.award {
+				flex: 1;
+				margin-left: 55px;
+			}
+			h3 {
+				padding-bottom: 15px;
+				margin-bottom: 40px;
+				font-size: 28px;
+				font-weight: 500;
+				border-bottom: 2px solid #000;
+				letter-spacing: -.7px;
+				color: $primary-color;
+			}
+			dl {
+				display: flex;
+				flex-direction: row;
+				font-size: 18px;
+				line-height: 1.78;
+				&:not(:last-child) { margin-bottom: 20px; }
+				dt {
+					flex: .5;
+					font-weight: 700;
+				}
+				dd {
+					flex: 1;
+					span { display: block; }
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 1680px) {
+		.full-visual {
+			.cont {
+				padding-left: 80px;
+				margin: 160px -190px 0 0;
+				.tit { font-size: 30px; }
+				.quote { font-size: 15px; }
+			}
+		}
+		.content-wrap {
+			.btn-wrap { margin-top: 125px; }
+		}
+	}
+
+	@include pc-large {
+		.full-visual {
+			.cont {
+				padding-left: 70px;
+				margin: 130px -160px 0 0;
+				.tit { font-size: 28px; }
+				.quote { font-size: 13px; }
+			}
+		}
+		.content-wrap {
+			.btn-wrap { margin-top: 115px; }
+		}
+	}
+
+	@include pc-small {
+		.full-visual {
+			.cont {
+				margin: 100px -130px 0 0;
+				padding-left: 60px;
+				.tit { font-size: 25px; }
+				.quote { font-size: 12px; }
+			}
+		}
+		.content-wrap {
+			.btn-wrap { margin-top: 105px; }
+			.profile {
+				dl { font-size: 16px; }
+			}
+		}
+	}
+
+	@include tab {
+		.full-visual {
+			.cont {
+				padding-left: 50px;
+				.tit { font-size: 22px; }
+				.quote { font-size: 11px; }
+			}
+		}
+	}
+
+	@include media-mob {
+		.full-visual {
+			padding-bottom: 50px;
+			&:before {
+				width: 100%;
+				top: calc(50% - 140px);
+			}
+			.cont {
+				padding: 0;
+				margin: 80.7% 0 0 -85%;
+				.tit {
+					margin: 30px auto 10px;
+					font-size: 16px;
+				}
+				.desc {
+					.mob-hide,
+					.par-mob-hide { display: none; }
+					.mob-hide.on { display: inline; }
+					.par-mob-hide.on { display: inline; }
+				}
+				.quote {
+					font-size: 12px;
+					display: none;
+				}
+				.more {
+					display: block;
+					margin-top: 15px;
+					.mob-show {
+						padding: 0 3px 0;
+						border-bottom: 3px solid $base-color;
+						font-size: 14px;
+						font-weight: 500;
+						line-height: 28px;
+					}
+				}
+			}
+		}
+		.content-wrap {
+			.btn-wrap {
+				margin-top: 20px;
+				text-align: center;
+			}
+			.profile {
+				display: block;
+				margin-top: 45px;
+				.life { margin: 0; }
+				.award { margin: 40px 0 0 0; }
+				h3 {
+					font-size: 16px;
+					padding-bottom: 10px;
+					margin-bottom: 23px;
+				}
+				dl {
+					font-size: 14px;
+					&:not(:last-child) { margin-bottom: 15px; }
+					dt { flex: .7; }
+				}
+			}
+		}
+	}
+
+	@include mob-large {
+		.full-visual {
+			&:before { top: calc(50% - 230px); }
+			.cont {
+				margin: 80.7% -4% 0 -82%;
+				.desc {
+					span {
+						&.par { display: inline; }
+					}
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 490px) {
+		.full-visual {
+			&:before { top: calc(50% - 320px); }
+			.cont { margin: 78% -5% 0 -75%; }
+		}
+	}
+
+	@include mob-small {
+		.full-visual {
+			&:before { top: calc(50% - 370px); }
+			.cont { margin: 78% -5% 0 -74%; }
+		}
+	}
+}
+
+/* 오시는 길 */
+.intro-access {
+	.content-wrap {
+		border-top: 2px solid $base-color;
+		.info {
+			display: flex;
+			flex-direction: row;
+			padding: 30px 110px;
+			dl {
+				display: flex;
+				flex-direction: row;
+				flex: 1;
+				align-items: center;
+
+				&.address { margin-right: 15px; }
+				&.tel { flex: .4; }
+
+				dt {
+					position: relative;
+					flex-shrink: 0;
+					padding-right: 20px;
+					font-weight: 500;
+					word-break: break-all;
+					color: #757575;
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						width: 2px;
+						height: 15px;
+						top: 6px;
+						right: 0;
+						background-color: #dedede;
+					}
+				}
+				dd {
+					padding-left: 20px;
+					font-weight: 500;
+					word-break: break-all;
+				}
+			}
+		}
+		.map {
+			img { width: 100%; }
+		}
+		.access {
+			padding-left: 9%;
+			margin-top: 80px;
+			dl {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 52px;
+			}
+			dt {
+				flex-basis: 224px;
+				span {
+					display: inline-block;
+					width: 156px;
+					border-bottom: 2px solid #000;
+					color: $primary-color;
+					font-size: 26px;
+					font-weight: 500;
+				}
+			}
+			dd {
+				flex-basis: 650px;
+				font-size: 18px;
+				font-weight: 400;
+				span {
+					&:after {
+						content: ' :';
+					}
+				}
+				&.subway {
+					flex-basis: 450px;
+				}
+			}
+		}
+	}
+
+	@include pc-large {
+		.content-wrap {
+			.info {
+				padding: 30px 80px;
+			}
+		}
+	}
+
+	@include pc-small {
+		.content-wrap {
+			.info {
+				padding: 30px 40px;
+				dl {
+					dt { padding-right: 15px; }
+					dd {
+						flex-shrink: 0;
+						padding-left: 15px;
+					}
+				}
+			}
+			.access {
+				padding-left: 7%;
+			}
+		}
+	}
+
+	@include tab {
+		.content-wrap {
+			.info {
+				padding: 30px 30px;
+				dl {
+					dt { padding-right: 12px; }
+					dd { padding-left: 12px; }
+				}
+			}
+			.access {
+				padding-left: 5%;
+			}
+		}
+	}
+
+	@include media-mob {
+		.content-wrap {
+			.info {
+				padding: 25px 15px 20px;
+				display: block;
+				/* 07월 17일 삭제
+				.tit {
+					margin: 0 0 15px 0;
+					font-size: 20px;
+				} */
+				dl {
+					justify-content: flex-start;
+					align-items: inherit;
+					&.address { margin: 0 0 20px 0; }
+					dt {
+						width: 65px;
+						padding: 0;
+						font-size: 14px;
+						&:after { top: 4px; }
+					}
+					dd {
+						flex-shrink: inherit;
+						padding-left: 10px;
+						font-size: 14px;
+						word-break: keep-all;
+					}
+				}
+			}
+			.access {
+				margin-top: 40px;
+				padding: 0 15px;
+				dl {
+					display: block;
+					margin-bottom: 48px;
+				}
+				dt {
+					span {
+						width: 92.5px;
+						font-size: 16px;
+					}
+				}
+				dd {
+					margin-top: 22px;
+					font-size: 14px;
+					li {
+						position: relative;
+						padding-left: 60px;
+					}
+					span {
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+}

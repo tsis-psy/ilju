@@ -1,0 +1,200 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$m-icons-banner-close-name: 'm-icons-banner-close';
+$m-icons-banner-close-x: 70px;
+$m-icons-banner-close-y: 82px;
+$m-icons-banner-close-offset-x: -70px;
+$m-icons-banner-close-offset-y: -82px;
+$m-icons-banner-close-width: 54px;
+$m-icons-banner-close-height: 54px;
+$m-icons-banner-close-total-width: 274px;
+$m-icons-banner-close-total-height: 200px;
+$m-icons-banner-close-image: '@@img/sprite/m-icons.png';
+$m-icons-banner-close: (70px, 82px, -70px, -82px, 54px, 54px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-banner-close', );
+$m-icons-close-black-name: 'm-icons-close-black';
+$m-icons-close-black-x: 160px;
+$m-icons-close-black-y: 0px;
+$m-icons-close-black-offset-x: -160px;
+$m-icons-close-black-offset-y: 0px;
+$m-icons-close-black-width: 54px;
+$m-icons-close-black-height: 54px;
+$m-icons-close-black-total-width: 274px;
+$m-icons-close-black-total-height: 200px;
+$m-icons-close-black-image: '@@img/sprite/m-icons.png';
+$m-icons-close-black: (160px, 0px, -160px, 0px, 54px, 54px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-close-black', );
+$m-icons-close-green-name: 'm-icons-close-green';
+$m-icons-close-green-x: 0px;
+$m-icons-close-green-y: 0px;
+$m-icons-close-green-offset-x: 0px;
+$m-icons-close-green-offset-y: 0px;
+$m-icons-close-green-width: 72px;
+$m-icons-close-green-height: 72px;
+$m-icons-close-green-total-width: 274px;
+$m-icons-close-green-total-height: 200px;
+$m-icons-close-green-image: '@@img/sprite/m-icons.png';
+$m-icons-close-green: (0px, 0px, 0px, 0px, 72px, 72px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-close-green', );
+$m-icons-close-name: 'm-icons-close';
+$m-icons-close-x: 82px;
+$m-icons-close-y: 0px;
+$m-icons-close-offset-x: -82px;
+$m-icons-close-offset-y: 0px;
+$m-icons-close-width: 68px;
+$m-icons-close-height: 68px;
+$m-icons-close-total-width: 274px;
+$m-icons-close-total-height: 200px;
+$m-icons-close-image: '@@img/sprite/m-icons.png';
+$m-icons-close: (82px, 0px, -82px, 0px, 68px, 68px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-close', );
+$m-icons-menu-name: 'm-icons-menu';
+$m-icons-menu-x: 0px;
+$m-icons-menu-y: 152px;
+$m-icons-menu-offset-x: 0px;
+$m-icons-menu-offset-y: -152px;
+$m-icons-menu-width: 54px;
+$m-icons-menu-height: 48px;
+$m-icons-menu-total-width: 274px;
+$m-icons-menu-total-height: 200px;
+$m-icons-menu-image: '@@img/sprite/m-icons.png';
+$m-icons-menu: (0px, 152px, 0px, -152px, 54px, 48px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-menu', );
+$m-icons-newsletter-name: 'm-icons-newsletter';
+$m-icons-newsletter-x: 224px;
+$m-icons-newsletter-y: 0px;
+$m-icons-newsletter-offset-x: -224px;
+$m-icons-newsletter-offset-y: 0px;
+$m-icons-newsletter-width: 50px;
+$m-icons-newsletter-height: 50px;
+$m-icons-newsletter-total-width: 274px;
+$m-icons-newsletter-total-height: 200px;
+$m-icons-newsletter-image: '@@img/sprite/m-icons.png';
+$m-icons-newsletter: (224px, 0px, -224px, 0px, 50px, 50px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-newsletter', );
+$m-icons-quick-toggle-name: 'm-icons-quick-toggle';
+$m-icons-quick-toggle-x: 0px;
+$m-icons-quick-toggle-y: 82px;
+$m-icons-quick-toggle-offset-x: 0px;
+$m-icons-quick-toggle-offset-y: -82px;
+$m-icons-quick-toggle-width: 60px;
+$m-icons-quick-toggle-height: 60px;
+$m-icons-quick-toggle-total-width: 274px;
+$m-icons-quick-toggle-total-height: 200px;
+$m-icons-quick-toggle-image: '@@img/sprite/m-icons.png';
+$m-icons-quick-toggle: (0px, 82px, 0px, -82px, 60px, 60px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-quick-toggle', );
+$m-icons-reply-name: 'm-icons-reply';
+$m-icons-reply-x: 224px;
+$m-icons-reply-y: 60px;
+$m-icons-reply-offset-x: -224px;
+$m-icons-reply-offset-y: -60px;
+$m-icons-reply-width: 39px;
+$m-icons-reply-height: 44px;
+$m-icons-reply-total-width: 274px;
+$m-icons-reply-total-height: 200px;
+$m-icons-reply-image: '@@img/sprite/m-icons.png';
+$m-icons-reply: (224px, 60px, -224px, -60px, 39px, 44px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-reply', );
+$m-icons-search-name: 'm-icons-search';
+$m-icons-search-x: 160px;
+$m-icons-search-y: 64px;
+$m-icons-search-offset-x: -160px;
+$m-icons-search-offset-y: -64px;
+$m-icons-search-width: 54px;
+$m-icons-search-height: 52px;
+$m-icons-search-total-width: 274px;
+$m-icons-search-total-height: 200px;
+$m-icons-search-image: '@@img/sprite/m-icons.png';
+$m-icons-search: (160px, 64px, -160px, -64px, 54px, 52px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-search', );
+$m-icons-slide-play-name: 'm-icons-slide-play';
+$m-icons-slide-play-x: 224px;
+$m-icons-slide-play-y: 114px;
+$m-icons-slide-play-offset-x: -224px;
+$m-icons-slide-play-offset-y: -114px;
+$m-icons-slide-play-width: 24px;
+$m-icons-slide-play-height: 24px;
+$m-icons-slide-play-total-width: 274px;
+$m-icons-slide-play-total-height: 200px;
+$m-icons-slide-play-image: '@@img/sprite/m-icons.png';
+$m-icons-slide-play: (224px, 114px, -224px, -114px, 24px, 24px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-slide-play', );
+$m-icons-slide-stop-name: 'm-icons-slide-stop';
+$m-icons-slide-stop-x: 224px;
+$m-icons-slide-stop-y: 148px;
+$m-icons-slide-stop-offset-x: -224px;
+$m-icons-slide-stop-offset-y: -148px;
+$m-icons-slide-stop-width: 24px;
+$m-icons-slide-stop-height: 24px;
+$m-icons-slide-stop-total-width: 274px;
+$m-icons-slide-stop-total-height: 200px;
+$m-icons-slide-stop-image: '@@img/sprite/m-icons.png';
+$m-icons-slide-stop: (224px, 148px, -224px, -148px, 24px, 24px, 274px, 200px, '@@img/sprite/m-icons.png', 'm-icons-slide-stop', );
+$m-icons-width: 274px;
+$m-icons-height: 200px;
+$m-icons-image: '@@img/sprite/m-icons.png';
+$m-icons-sprites: ($m-icons-banner-close, $m-icons-close-black, $m-icons-close-green, $m-icons-close, $m-icons-menu, $m-icons-newsletter, $m-icons-quick-toggle, $m-icons-reply, $m-icons-search, $m-icons-slide-play, $m-icons-slide-stop, );
+$m-icons: (274px, 200px, '@@img/sprite/m-icons.png', $m-icons-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

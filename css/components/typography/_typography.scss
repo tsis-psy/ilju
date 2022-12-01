@@ -1,0 +1,75 @@
+.txt-level01 {
+	font-family: 'Godo';
+	font-weight: 400;
+	font-size: 56px;
+	line-height: 1.14;
+	letter-spacing: -1.4px;
+	color: $base-color;
+}
+.txt-level02 {
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.46;
+	letter-spacing: -.7px;
+	color: #333;
+}
+.txt-level03 {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 1.5;
+	letter-spacing: -.6px;
+	color: #333;
+}
+.txt-level04 {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.5;
+	letter-spacing: -.45px;
+	color: #333;
+}
+.txt-level05 {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -.4px;
+	color: #333;
+}
+.txt-level06 {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #757575;
+}
+
+@include media-mob {
+	.txt-level01 {
+		font-size: 35px;
+		line-height: 1.14;
+		letter-spacing: -1.75px;
+	}
+	.txt-level02 {
+		font-size: 19px;
+		line-height: 1.47;
+		letter-spacing: -.95px;
+	}
+	.txt-level03 {
+		font-size: 16px;
+		line-height: 1.47;
+		letter-spacing: -.8px;
+	}
+	.txt-level04 {
+		font-size: 13px;
+		line-height: 1.46;
+		letter-spacing: -.65px;
+	}
+	.txt-level05 {
+		font-size: 12px;
+		letter-spacing: normal;
+	}
+	.txt-level06 {
+		font-size: 10px;
+		line-height: 1.45;
+		letter-spacing: normal;
+	}
+}

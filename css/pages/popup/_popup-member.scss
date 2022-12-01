@@ -1,0 +1,62 @@
+/* 멤버십 팝업 */
+.popup-content-default {
+	/* 로그인 팝업 */
+	&.login {
+		> .inner {
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		@include media-mob {
+			> .inner { padding: 0 15px; }
+		}
+	}
+
+	/* 아이디, 비번찾기 팝업 */
+	&.find-info {
+		.inner > .con { padding-bottom: 0; }
+		.desc {
+			margin-bottom: 30px;
+			font-size: 22px;
+			font-weight: 500;
+		}
+		.field {
+			margin: 30px 20px;
+			border-top: 2px solid $base-color;
+			border-bottom: 2px solid #dedede;
+		}
+		.input-table {
+			padding: 50px 43px;
+			dd .btn { padding: 0 18px; }
+		}
+	}
+
+	@include media-mob {
+		&.find-info {
+			.desc { font-size: 18px; }
+			.input-table { padding: 30px 10px; }
+		}
+	}
+
+	@include mob {
+		&.find-info {
+			.field { margin: 20px 0; }
+		}
+	}
+
+	@include mob-mid {
+		&.find-info {
+			.input-table {
+				dd {
+					display: block;
+					.tel-wrap + .btn {
+						margin: 10px 0 0;
+					}
+				}
+				dl:last-child {
+					dd { display: flex; }
+				}
+			}
+
+		}
+	}
+}

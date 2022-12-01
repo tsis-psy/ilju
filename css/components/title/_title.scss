@@ -1,0 +1,93 @@
+.page-head {
+	padding-bottom: 50px;
+	.tit {
+		margin-bottom: 7px;
+		font-family: 'Godo';
+		font-size: 56px;
+		font-weight: 400;
+		line-height: 1.14;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(100px);
+		animation: fade-up .8s forwards;
+	}
+	.desc {
+		font-size: 20px;
+		line-height: 1.63;
+		text-align: center;
+		color: #333;
+		opacity: 0;
+		transform: translateY(100px);
+		animation: fade-up .8s forwards .2s;
+	}
+
+	@include media-mob {
+		padding-bottom: 40px;
+		.tit {
+			font-size: 35px;
+			line-height: 1.09;
+			letter-spacing: -1.75px;
+		}
+		.desc {
+			font-size: 15px;
+			line-height: 1.26;
+			letter-spacing: -.75px;
+		}
+	}
+
+	@include mob-mid {
+		.desc {
+			span { display: block; }
+		}
+	}
+}
+
+
+.title-txt {
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: 700;
+	position: relative;
+	&.large { font-size: 22px; }
+	span { font-weight: 500; }
+	.info-txt {
+		margin: 0 0 0 10px;
+		font-size: 14px;
+		font-weight: 400;
+		color: #757575;
+		display: inline-block;
+		&.right {
+			position: absolute;
+			right: 0;
+			top: 3px;
+		}
+	}
+
+	@include media-mob {
+		font-size: 16px;
+		&.large { font-size: 18px; }
+		span { font-size: 14px; }
+		.info-txt {
+			display: block;
+			margin: 0;
+			font-size: 12px;
+			&.right {
+				position: static;
+				word-break: keep-all;
+			}
+		}
+	}
+}
+
+.primary-title {
+	margin-top: 50px;
+	font-size: 20px;
+	font-weight: 700;
+	color: $primary-color;
+	&:first-child { margin-top: 0; }
+
+	@include media-mob {
+		margin-top: 40px;
+		font-size: 18px;
+	}
+}

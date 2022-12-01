@@ -1,0 +1,166 @@
+/* 플로팅 퀵메뉴 */
+.quick-menu {
+	position: fixed;
+	top: 300px;
+	right: 30px;
+	width: 60px;
+	margin-top: 189px;
+	z-index: 9;
+	li {
+		width: 60px;
+		height: 60px;
+		margin-bottom: 10px;
+		border-radius: 50%;
+		box-shadow: 8px 8px 10px 0 rgba(0,0,0,.16);
+		text-align: center;
+		a {
+			display: inline-block;
+			width: 60px;
+			height: 60px;
+		}
+		span {
+			display: inline-block;
+			margin-top: 50%;
+			transform: translateY(-50%);
+		}
+		&.icon-toggle {
+			display: none;
+			position: absolute;
+			top: 0;
+			margin-bottom: 10px;
+			z-index: 1;
+			background-color: #0b8e3e;
+			@include media-mob {
+				display: block;
+			}
+		}
+		&.icon-ask {
+			background-color: #0ba848;
+			&:hover { background-color: #19c95d; }
+			&:active { background-color: #0b8e3e; }
+			span {
+				@include spriteIR-2x-pad($icons-quick-ask-2x);
+			}
+		}
+		&.icon-news {
+			background-color: $primary-color;
+			&:hover { background-color: #85da10; }
+			&:active { background-color: #62a109; }
+			span {
+				@include spriteIR-2x-pad($icons-quick-news-2x);
+			}
+		}
+		&.icon-facebook {
+			background-color: #4961b0;
+			position: relative;
+			span { text-indent: -9999px; }
+			a:before {
+				content: 'f';
+				font-family: 'Godo';
+				color: #fff;
+				font-size: 30px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-45%);
+				cursor: pointer;
+			}
+			&:hover { background-color: #6681d8; }
+			&:active { background-color: #41579e; }
+		}
+		&.icon-blog {
+			background-color: #00b4a8;
+			position: relative;
+			span { text-indent: -9999px; }
+			a:before {
+				content: 'B';
+				font-family: 'Godo';
+				color: #fff;
+				font-size: 26px;
+				font-weight: 700;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-45%);
+				cursor: pointer;
+			}
+			&:hover { background-color: #04cec0; }
+			&:active { background-color: #088f86; }
+		}
+		&.icon-top {
+			background-color: #fff;
+			border: 2px solid #0ba848;
+			&:hover { border-color: #19c95d; }
+			&:active { border-color: #0b8e3e; }
+			span {
+				@include spriteIR-2x-pad($icons-quick-top-2x);
+				transform: translate(-5%,-55%);
+			}
+		}
+		/* 플로팅 퀵메뉴에 학사모 버튼 추가 - tsis 추가내용 반영 */
+		&.icon-db {
+			background-color: #599db6;
+			position: relative;
+			span {
+				width: 3.2rem;
+				height: 0;
+				background-image: url('../img/sprite/icons.png');
+				background-size: 26.0rem;
+				background-position: -21.7rem -23.0rem !important;
+				background-repeat: no-repeat;
+				max-height: 3.2rem;
+				padding-top: 3.2rem;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+@include media-mob {
+	.quick-menu {
+		position: fixed;
+		display: none;
+		top: auto;
+		bottom: 85px;
+		right: 25px;
+		width: 60px;
+		margin-top: 0;
+		&.open li:not(.icon-toggle) {
+			opacity: 1;
+			transition: ease .3s;
+			&.icon-ask {
+				top: -350px;
+			}
+			&.icon-news {
+				top: -280px;
+			}
+			&.icon-facebook {
+				top: -210px;
+			}
+			&.icon-blog {
+				top: -140px;
+			}
+			&.icon-top {
+				top: -70px;
+			}
+		}
+		li {
+			width: 60px;
+			height: 60px;
+			&:not(.icon-toggle) {
+				position: absolute;
+				top: 0;
+				opacity: 0;
+				transition: ease .3s;
+			}
+			a {
+				width: 60px;
+				height: 60px;
+			}
+			&.icon-toggle {
+				display: block;
+				span { @include spriteIR-2x-pad($m-icons-quick-toggle); }
+			}
+		}
+	}
+}

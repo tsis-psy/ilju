@@ -1,0 +1,14 @@
+.section-community {
+	.board-line { padding-bottom: 40px; }
+	.thumbnail-list {
+		padding: 60px 0 35px;
+		+ .info-txt {
+			text-align: center;
+		}
+	}
+	@include media-mob {
+		.thumbnail-list {
+			padding: 20px 0 35px;
+		}
+	}
+}

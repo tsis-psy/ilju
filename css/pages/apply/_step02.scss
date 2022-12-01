@@ -1,0 +1,135 @@
+/* 지원신청 - 자기소개서 작성 */
+.apply-step02 {
+	.input {
+		margin-bottom: 10px;
+		font-size: 0;
+		.btn { margin-left: 10px; }
+		input[readonly] { background-color: #f5f5f5; }
+	}
+	.text-input { padding: 0 10px 20px; }
+	.field {
+		.text-input:last-child { padding-bottom: 0; }
+	}
+	.os-host-textarea { height: 68px; }
+	.title {
+		margin-bottom: 10px;
+		font-weight: 500;
+		color: #757575;
+	}
+	.letters {
+		margin-top: 10px;
+		text-align: right;
+		font-size: 14px;
+		color: #757575;
+		letter-spacing: normal;
+	}
+	.table-form {
+		margin-bottom: 40px;
+		padding: 35px;
+		background-color: #f0f0f0;
+		&.white {
+			background-color: #fff;
+			border-top: 1px solid #dedede;
+			border-bottom: 1px solid #dedede;
+		}
+		table { width: 100%; }
+		th {
+			text-align: left;
+			font-weight: 500;
+			color: #757575;
+		}
+		td {
+			padding: 5px 0;
+			height: 50px;
+			.input-form {
+				font-size: 0;
+				input {
+					margin-left: 10px;
+					&:first-child { margin-left: 0; }
+				}
+				.btn { margin-left: 10px; }
+				span {
+					font-size: 16px;
+					font-weight: 500;
+					margin-left: 18px;
+					vertical-align: middle;
+					color: #757575;
+				}
+			}
+			strong { font-weight: 500; }
+		}
+		input[type='checkbox'], input[type='radio'] {
+			margin-left: 30px;
+			&:first-child { margin-left: 0; }
+		}
+	}
+
+	@include media-mob {
+		.letters {
+			margin-top: 5px;
+			font-size: 12px;
+		}
+		.table-form {
+			padding: 10px 20px 20px;
+			&.white {
+				border-bottom: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+			th { display: none; }
+			td {
+				display: block;
+				height: auto;
+				&:before {
+					display: block;
+					content: attr(data-th);
+					margin: 10px 0 5px;
+					font-weight: 500;
+					color: #757575;
+				}
+				strong {
+					display: block;
+					margin-bottom: 5px;
+				}
+				.input:last-child { margin-bottom: 0; }
+				.input:has(.button) {
+					display: flex;
+				}
+				.input-form {
+					span {
+						display: inline-block;
+						margin: 5px 0 0 0;
+						font-size: 14px;
+					}
+					input.date {
+						width: calc(50% - 5px);
+					}
+				}
+				label.check {
+					display: inline-block;
+					margin-bottom: 5px;
+				}
+				.input:first-child {
+					display: flex;
+					.btn { flex-shrink: 0; }
+				}
+			}
+			input[type='checkbox'], input[type='radio'] { margin-left: 0; }
+		}
+		.btn.large {
+			padding: 0 25px;
+			margin-right: 5px;
+		}
+	}
+	
+	@include mob-mid {
+		.btn.large { padding: 0 21px; }
+	}
+
+	@include mob-small {
+		.btn.large {
+			padding: 0 17px;
+			font-size: 13px;
+		}
+	}
+}

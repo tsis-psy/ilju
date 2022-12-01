@@ -1,0 +1,496 @@
+/* 사업소개 공통 */
+.section-service {
+	.full-visual {
+		height: 456px;
+		overflow: hidden;
+		.img {
+			width: 100%;
+			height: 100vh;
+			background-image: url('@@img/service/full-visual-education.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center 0;
+			position: relative;
+		}
+	}
+	.relation-info {
+		word-break: keep-all;
+		padding: 60px 20px 80px 20px;
+		background-color: #f8f8f8;
+		.wrap {
+			max-width: 1060px;
+			margin: 0 auto;
+		}
+		.title {
+			margin-bottom: 45px;
+			color: $base-color;
+			font-weight: 700;
+			font-size: 28px;
+			/* 리스트 두개 형태 임시 */
+			&.empo {
+				width: 63%;
+				margin: 0 auto 45px;
+			}
+		}
+		.list {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+		li {
+			width: 24.52%;
+			&:not(:first-child) { margin-left: 13.2%; }
+		}
+		a {
+			display: block;
+			width: 100%;
+			&:hover .desc:after { @include spriteIR($icons-link-relation-on); }
+		}
+		.tit {
+			padding: 7px 0;
+			border-bottom: 1px solid $base-color;
+			color: $base-color;
+			font-weight: 500;
+			font-size: 18px;
+		}
+		.desc {
+			padding-right: 45px;
+			margin-top: 10px;
+			color: $base-color;
+			font-weight: 400;
+			font-size: 16px;
+			position: relative;
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 4px;
+				right: 4px;
+				@include spriteIR($icons-link-relation);
+			}
+		}
+	}
+	@include media-mob {
+		.full-visual {
+			height: 228px;
+			.img { background-size: auto 600px; }
+		}
+		.relation-info {
+			padding: 40px 0;
+			.wrap { margin: 0 40px; }
+			.title {
+				margin-bottom: 22px;
+				font-size: 22px;
+				/* 리스트 두개 형태 임시 */
+				&.empo {
+					width: inherit;
+					margin: 0 auto 22px;
+				}
+			}
+			.list {
+				flex-direction: column;
+			}
+			li {
+				width: 100%;
+				&:not(:first-child) {
+					margin-top: 22px;
+					margin-left: 0;
+				}
+			}
+			a {
+				width: 100%;
+				&:hover .desc:after { @include spriteIR-2x-pad($icons-link-relation); }
+			}
+			.tit { font-size: 16px; }
+			.desc {
+				margin-top: 6px;
+				font-size: 14px;
+				&:after { @include spriteIR-2x-pad($icons-link-relation); }
+			}
+		}
+	}
+}
+
+/* 사업소개 - 소개 기본 페이지 형태(대표 디자인 : 해외박사) */
+.service-introduce {
+	word-break: break-all;
+	.top-intro {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: 50px auto 80px auto;
+		.title {
+			flex: 1;
+			padding-right: 25px;
+			word-break: keep-all;
+			p {
+				line-height: 1.45;
+				color: #333;
+				font-weight: 500;
+				font-size: 46px;
+				letter-spacing: -1px;
+			}
+			span {
+				background-position: 0 40px;
+			}
+			.underline {
+				background-image: linear-gradient(to right,rgba(0,0,0,0) 50%,#9cf122 50%);
+				background-repeat: repeat-x;
+				background-position: 0 40px;
+				background-size: 200% 30px;
+				transition: background-position .4s 1.1s;
+			}
+			&.aos-animate .underline {
+				background-position: -100% 40px;
+			}
+		}
+		.con {
+			flex: 1;
+			padding: 8px 0 0 25px;
+			p {
+				text-align: justify;
+				line-height: 1.45;
+				color: $base-color;
+				font-weight: 400;
+				font-size: 18px;
+				opacity: 0;
+				transform: translateY(50px);
+				transition: transform .1s, opacity .1s;
+				&:not(:first-child) { margin-top: 17px; }
+			}
+			.br { display: inline; }
+			&.aos-animate {
+				p {
+					opacity: 1;
+					transform: translateY(0);
+					transition: transform .6s 1.1s, opacity .6s 1.1s;
+					&:nth-child(2) { transition: transform .6s 1.2s, opacity .6s 1.2s; }
+					&:nth-child(3) { transition: transform .6s 1.3s, opacity .6s 1.3s; }
+					&:nth-child(4) { transition: transform .6s 1.4s, opacity .6s 1.4s; }
+					&:nth-child(5) { transition: transform .6s 1.5s, opacity .6s 1.5s; }
+					&:nth-child(6) { transition: transform .6s 1.6s, opacity .6s 1.6s; }
+					&:nth-child(7) { transition: transform .6s 1.7s, opacity .6s 1.7s; }
+				}
+			}
+		}
+	}
+	.detail-info {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		max-width: 1200px;
+		min-height: 680px;
+		padding: 80px 0 100px 0;
+		margin: 0 auto;
+		
+		.img {
+			flex: 1;
+			min-height: 464px;
+			background-image: url('@@img/service/detail-info-education.png');
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+			background-position: 50% 50%;
+		}
+		.con {
+			flex: 1;
+			margin-left: 30px;
+		}
+		.row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			&:not(:first-child) {
+				padding-top: 30px;
+				margin-top: 30px;
+				border-top: 1px solid #dedede;
+			}
+		}
+		.tit {
+			width: 125px;
+			height: 100%;
+			color: #333;
+			font-weight: 700;
+			font-size: 22px;
+			.history {
+				font-size: 20px;
+				letter-spacing: -1.5px;
+			}
+			.space {
+				padding: 0 7.5%;
+			}
+		}
+		.desc {
+			width: calc(100% - 125px);
+			padding-top: 4px;
+			p {
+				color: #333;
+				font-size: 16px;
+				&:not(:first-child) { margin-top: 10px; }
+			}
+		}
+		.str {
+			display: block;
+			font-weight: 400;
+		}
+		.btn-area {
+			width: 100%;
+			margin-top: 60px;
+			text-align: right;
+		}
+	}
+
+	@include pc-large {
+		.top-intro {
+			.con {
+				.br { display: inline; }
+			}
+		}
+	}
+
+	@include media-mob {
+		.top-intro {
+			display: block;
+			margin-bottom: 30px;
+			.title {
+				padding: 0;
+				p {
+					font-size: 26px;
+					word-break: keep-all;
+				}
+				span { background-position: 0 20px; }
+				.underline {
+					background-position: 0 20px;
+					background-size: 200% 16px;
+				}
+				&.aos-animate .underline {
+					background-position: -100% 20px;
+				}
+			}
+			.con {
+				margin-top: 34px;
+				padding: 0;
+				p {
+					font-size: 14px;
+					&:not(:first-child) { margin-top: 20px; }
+				}
+			}
+		}
+		.detail-info {
+			flex-direction: column;
+			padding: 20px 0 50px 0;
+			.img {
+				width: 280px;
+				min-height: 270px;
+				margin: 0 auto;
+				background-position: center center;
+			}
+			.con {
+				padding: 0 10px;
+				margin: 0;
+			}
+			.row:not(:first-child) {
+				padding-top: 17px;
+				margin-top: 17px;
+			}
+			.tit {
+				width: 80px;
+				font-size: 16px;
+				.history {
+					font-size: 15px;
+				}
+			}
+			.desc {
+				width: calc(100% - 80px);
+				padding-top: 0;
+				font-size: 14px;
+				p { font-size: 14px; }
+			}
+			.btn-area {
+				margin-top: 45px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/* 사업소개 - 장학생 봉사단 페이지 형태 */
+.service-volunteer {
+	.intro-visual {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 439px;
+		padding: 0 20px;
+		overflow: hidden;
+		.img {
+			width: 100%;
+			height: 200%;
+			background-image: url('@@img/service/volunteer-intro.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		.title {
+			color: #fff;
+			font-weight: 400;
+			font-size: 38px;
+			text-align: center;
+			letter-spacing: -1px;
+			position: relative;
+			z-index: 2;
+			.str {
+				display: block;
+				margin-top: 2px;
+				font-weight: 500;
+			}
+		}
+		.author {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			font-weight: 400;
+			font-size: 24px;
+			margin-top: 22px;
+			position: relative;
+			z-index: 2;
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 20px;
+				height: 2px;
+				margin-right: 20px;
+				background-color: #fff;
+			}
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 20px;
+				height: 2px;
+				margin-left: 20px;
+				background-color: #fff;
+			}
+		}
+	}
+	.cross-list {
+		padding: 100px 0;
+		word-break: break-all;
+		text-align: justify;
+		li {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			&:not(:first-child) { margin-top: 160px; }
+			&:nth-child(2n) {
+				flex-direction: row-reverse;
+				.con {
+					padding-left: 5.16%;
+					padding-right: 0;
+				}
+			}
+			.underline {
+				display: inline-block;
+				padding: 0 6px;
+				background-image: linear-gradient(to right,rgba(0,0,0,0) 50%,#9cf122 50%);
+				background-repeat: repeat-x;
+				background-position: 0 21px;
+				background-size: 200% 24px;
+				transition: background-position .4s .4s;
+			}
+			&.aos-animate .underline { background-position: -100% 21px; }
+		}
+		.con {
+			width: 52.5%;
+			padding-right: 5.16%;
+			color: $base-color;
+		}
+		.img {
+			width: 47.5%;
+			height: 0;
+			min-height: 0;
+			padding-top: 29.75%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			overflow: hidden;
+		}
+		.title {
+			line-height: 1.2;
+			color: $base-color;
+			font-weight: 500;
+			font-size: 38px;
+		}
+		.desc {
+			line-height: 1.6;
+			margin-top: 22px;
+			color: $base-color;
+			font-weight: 400;
+			font-size: 18px;
+		}
+	}
+
+	@include media-mob {
+		.intro-visual {
+			height: 266px;
+			.title {
+				font-size: 19px;
+				letter-spacing: -.025em;
+				.str { margin-top: -2px; }
+			}
+			.author {
+				margin-top: 10px;
+				font-size: 12px;
+				&:before {
+					width: 10px;
+					height: 1px;
+					margin-right: 10px;
+				}
+				&:after {
+					width: 10px;
+					height: 1px;
+					margin-left: 10px;
+				}
+			}
+		}
+		.cross-list {
+			padding: 50px 0;
+			li {
+				flex-direction: column;
+				&:not(:first-child) { margin-top: 40px; }
+				&:nth-child(2n) {
+					flex-direction: column;
+					.con { padding-left: 0; }
+				}
+				&.aos-animate .underline { background-position: -100% 18px; }
+			}
+			.img {
+				width: 100%;
+				padding-top: 58.82%;
+				margin-top: 20px;
+			}
+			.con {
+				width: 100%;
+				padding-right: 0;
+			}
+			.title {
+				font-size: 26px;
+				.underline {
+					background-position: 0 18px;
+					background-size: 200% 15px;
+				}
+			}
+			.desc {
+				line-height: 1.5;
+				margin-top: 17px;
+				font-size: 13px;
+			}
+		}
+	}
+}

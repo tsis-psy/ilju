@@ -1,0 +1,60 @@
+.tab-menu {
+	display: flex;
+	overflow-x: auto;
+	margin-bottom: 100px;
+	.list {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: nowrap;
+		flex-shrink: 0;
+		height: 60px;
+		margin: 0 auto;
+		border-radius: 30px;
+		border: 1px solid #dedede;
+	}
+	li {
+		&.on a {
+			color: #fff;
+			background-color: $primary-color;
+		}
+		a {
+			box-sizing: border-box;
+			display: block;
+			padding: 16px 30px;
+			height: 60px;
+			border-radius: 30px;
+			color: #757575;
+			font-weight: 400;
+			font-size: 18px;
+			letter-spacing: -1px;
+			text-align: center;
+			position: relative;
+			top: -1px;
+			left: -1px;
+			z-index: 2;
+			&.active {
+				color: #fff;
+				background-color: $primary-color;
+			}
+		}
+		&:last-child a {
+			left: auto;
+			right: -1px;
+		}
+	}
+
+	@include media-mob {
+		padding: 0 15px;
+		margin-bottom: 30px;
+		.list { height: 40px; }
+		li {
+			a {
+				min-width: 60px;
+				height: 40px;
+				padding: 10px 15px;
+				font-size: 13px;
+			}
+		}
+	}
+}

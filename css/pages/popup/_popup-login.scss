@@ -1,0 +1,162 @@
+.common-login {
+	> .desc {
+		margin-bottom: 30px;
+		color: #333;
+		font-weight: 500;
+		font-size: 22px;
+		letter-spacing: -1.1px;
+		.str { color: $primary-color; }
+	}
+	> .login-form-wrap {
+		padding: 50px 60px;
+		border-top: 2px solid $base-color;
+		border-bottom: 2px solid #dedede;
+		& + .btn-area {
+			margin-top: 20px;
+			font-size: 0;
+			.btn {
+				margin: 10px 0 0 10px;
+				&:first-child { margin-left: 0; }
+				&:nth-child(2) { padding: 0 20.5px; }
+				&:nth-child(3) { padding: 0 13px; }
+			}
+		}
+	}
+	> .add {
+		margin-top: 20px;
+		color: #757575;
+		font-weight: 400;
+		font-size: 14px;
+		text-align: center;
+	}
+	> .info {
+		padding: 30px 20px;
+		margin-top: 40px;
+		background-color: #f5f5f5;
+		.desc {
+			color: #333;
+			font-weight: 500;
+			font-size: 18px;
+			.str { color: $primary-color; }
+		}
+		.btn-area {
+			font-size: 0;
+			margin-top: 15px;
+		}
+	}
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 92px;
+	.input-id,
+	.input-pw {
+		display: flex;
+		flex-direction: row;
+		width: calc(100% - 128px);
+		padding-right: 10px;
+	}
+	.input-pw { margin-top: 12px; }
+	label {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		min-width: 80px;
+		padding-right: 5px;
+		color: #333;
+		font-weight: 500;
+		font-size: 18px;
+		text-align: left;
+	}
+	input[type='text'] { flex-grow: 1; }
+	.btn-area {
+		width: 128px;
+		height: 100%;
+	}
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@include media-mob {
+	.common-login {
+		> .login-form-wrap {
+			padding: 30px 20px;
+			& + .btn-area {
+				.btn {
+					margin: 5px 0 0 5px;
+					padding: 0 23px;
+					&:nth-child(2) { padding: 0 14px; }
+					&:nth-child(3) { padding: 0 8px; }
+				}
+			}
+		}
+		> .desc { font-size: 18px; }
+		> .info {
+			.desc {
+				font-size: 16px;
+				word-break: keep-all;
+			}
+		}
+	}
+
+	.login-form {
+		height: auto;
+		.input-id, .input-pw {
+			flex-direction: column;
+			width: 100%;
+			padding: 0;
+		}
+		label {
+			padding: 0;
+			font-size: 14px;
+		}
+		input[type='text'] {
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		.btn-area {
+			width: 100%;
+			margin-top: 20px;
+		}
+	}
+}
+
+@include mob-mid {
+	.common-login {
+		> .login-form-wrap {
+			& + .btn-area {
+				.btn {
+					padding: 0 21px;
+					font-size: 13px;
+					&:nth-child(2) { padding: 0 13px; }
+					&:nth-child(3) { padding: 0 7.5px; }
+				}
+			}
+		}
+	}
+}
+
+@include mob-small {
+	.common-login {
+		> .desc {
+			font-size: 16px;
+			word-break: keep-all;
+		}
+		> .login-form-wrap {
+			+ .btn-area {
+				.btn {
+					padding: 0 18px;
+					&:nth-child(2) { padding: 0 10px; }
+					&:nth-child(3) { padding: 0 4.5px; }
+				}
+			}
+		}
+	}
+}

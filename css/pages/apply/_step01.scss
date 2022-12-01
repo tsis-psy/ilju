@@ -1,0 +1,407 @@
+/* 지원신청 Step01 */
+.apply-step01 {
+	.school-form {
+		> li {
+			display: table;
+			width: 100%;
+			background-color: #f5f5f5;
+			margin-bottom: 10px;
+		}
+		.school-select {
+			display: table-cell;
+			width: 230px;
+			padding: 15px 0 15px 20px;
+			vertical-align: top;
+			.select {
+				display: inline-block;
+				vertical-align: middle;
+				width: 154px;
+				margin-left: 20px;
+				font-weight: 400;
+			}
+		}
+		.school-input {
+			display: table-cell;
+			width: calc(100% - 230px);
+			padding: 15px 20px;
+			input[type='text'][readonly] { background-color: #fff; }
+		}
+	}
+	.school-type {
+		display: none;
+		.input-wrap {
+			.check:first-of-type { margin-left: 10px; }
+		}
+	}
+	.form-area {
+		display: none;
+		padding: 50px 30px;
+		border-top: 1px solid #dedede;
+		.age { margin-left: 20px; }
+		label.radio span { vertical-align: top; }
+		&.school-field {
+			.control-wrap { margin-top: 10px; }
+		}
+	}
+	.school-field .paper {
+		td { padding-bottom: 15px; }
+		tr:last-child td { padding-bottom: 5px; }
+		input[type='text'] {
+			max-width: 660px;
+			&.half-more { max-width: 164px; }
+		}
+	}
+	.volunteer-field {
+		.input-list {
+			.select {
+				width: 154px;
+				margin: 0 10px 0 20px;
+			}
+			input[type='text'] {
+				width: 17%;
+				max-width: 146px;
+				&:first-of-type {
+					width: 30.8%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+	.certify-field {
+		.gle {
+			input[type='text'] {
+				width: 21.3%;
+				&.date { max-width: 146px; }
+			}
+		}
+		.toefl {
+			input[type='text'] {
+				width: 21.3%;
+				&.date { max-width: 146px; }
+			}
+		}
+		table + .control-wrap {
+			margin-top: 25px;
+			.controls + .input-list {
+				padding: 0;
+				border: 0;
+			}
+		}
+		.certify {
+			.check-only + .select {
+				width: 154px;
+				margin: 0 10px 0 20px;
+			}
+			input[type='text'] {
+				width: 12.8%;
+				&:first-of-type { width: 25%; }
+				&:last-child { width: 18.3%; }
+			}
+		}
+	}
+	.input-list {
+		&.language {
+			> li {
+				margin-top: 30px;
+				&:last-child { margin-bottom: 10px; }
+			}
+			.input-wrap:first-child {
+				.check-only + .select {
+					width: 154px;
+					margin: 0 10px 0 20px;
+				}
+				input[type='text'] {
+					display: none;
+					max-width: 305px;
+				}
+			}
+			.input-wrap:nth-child(2) {
+				margin-left: 216px;
+				input[type='text'] {
+					&:first-child {
+						width: 33.7%;
+					}
+					&:nth-child(2) {
+						width: 22.7%;
+					}
+					&.date {
+						width: 16%;
+					}
+				}
+				.select {
+					width: 16%;
+				}
+			}
+		}
+	}
+	.family {
+		label.check {
+			margin-right: 20px;
+			margin-top: 5px;
+			&:last-of-type { margin-right: 0; }
+			span { vertical-align: top; }
+		}
+	}
+	.extra-field {
+		.patent {
+			tr {
+				&:first-child {
+					.input-wrap {
+						input[type='text'] {
+							width: 14.7%;
+							&:last-child {
+								width: calc(85.3% - 10px);
+							}
+						}
+					}
+				}
+				&:last-child {
+					.input-wrap {
+						input[type='text'] {
+							width: 14.7%;
+							&:last-child { width: calc(70.6% - 20px); }
+						}
+					}
+				}
+			}
+		}
+		.income {
+			.input-wrap {
+				.select { width: 15.4%; }
+				input[type='text'] { width: 30.8%; }
+				.etc { display: none; }
+			}
+		}
+		.tel-wrap { max-width: 367px; }
+		.notice-list { margin-top: 10px; }
+	}
+
+	@include pc-small {
+		.school-form {
+			.school-select,
+			.school-input {
+				display: block;
+				width: 100%;
+			}
+			.school-input {
+				padding: 0 20px;
+			}
+			.school-type {
+				padding-bottom: 15px;
+			}
+		}
+	}
+
+	@include tab {
+		.input-list.language {
+			.input-wrap:nth-child(2) {
+				margin-left: 42px;
+			}
+		}
+	}
+
+	@include media-mob {
+		.input-list.language {
+			> li {
+				margin-top: 30px;
+				padding-top: 30px;
+				border-top: 1px solid #dedede;
+				&:first-child { margin-top: 0; }
+			}
+			.input-wrap:first-child {
+				.check-only + .select {
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+				input[type='text'] {
+					display: none;
+					max-width: 100%;
+					margin: 10px 0 0;
+				}
+				.select {
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+			}
+			.input-wrap:nth-child(2) {
+				margin: 0;
+				input[type='text'] {
+					margin: 10px 0 0 0;
+					&:first-child {
+						width: 100%;
+					}
+					&:nth-child(2) {
+						width: 100%;
+					}
+					&.date {
+						width: 100%;
+						max-width: 100%;
+					}
+				}
+				.select {
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+			}
+		}
+		.form-area {
+			padding: 20px 10px;
+		}
+		.school-type {
+			.input-wrap { margin-top: 0; }
+		}
+		.school-field .paper {
+			td { padding-bottom: 5px; }
+		}
+		.volunteer-field,
+		.extra-field {
+			.control-wrap {
+				.table-row {
+					tbody td:not(:first-child).half.right {
+						padding-top: 21px;
+					}
+					.input-wrap {
+						border-top: 1px solid #dedede;
+						padding-top: 30px;
+						margin-top: 30px;
+					}
+				}
+			}
+			.input-list {
+				.select {
+					width: 100%;
+					margin: 0;
+				}
+				input[type='text'] {
+					width: 100%;
+					max-width: 100%;
+					margin: 10px 0 0 0;
+					&:first-of-type {
+						width: 100%;
+					}
+				}
+			}
+			.check-only { margin-bottom: 10px; }
+		}
+		.volunteer-field {
+			.input-wrap {
+				border-top: 1px solid #dedede;
+				padding-top: 30px;
+				margin-top: 30px;
+				&:first-child {
+					margin-top: 0;
+					border-top: 0;
+					padding-top: 0;
+				}
+			}
+		}
+		.certify-field {
+			.gle {
+				input[type='text'] {
+					width: 100%;
+					margin: 10px 0 0 0;
+					&.date { max-width: 100%; }
+				}
+			}
+			.toefl {
+				input[type='text'] {
+					width: 100%;
+					max-width: 100%;
+					margin: 10px 0 0 0;
+					&.date { max-width: 100%; }
+				}
+			}
+			.control-wrap:first-of-type {
+				margin-top: 30px;
+			}
+			.certify {
+				.input-wrap {
+					margin-top: 30px;
+					padding-top: 30px;
+					border-top: 1px solid #dedede;
+					&:first-child {
+						margin-top: 0;
+						padding-top: 0;
+						border-top: 0;
+					}
+				}
+				.check-only + .select {
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+				input[type='text'] {
+					width: 100%;
+					margin: 10px 0 0 0;
+					&:first-of-type { width: 100%; }
+					&:last-child { width: 100%; }
+				}
+			}
+		}
+		.extra-field {
+			.patent {
+				tr {
+					&:first-child {
+						.input-wrap {
+							display: block;
+							input[type='text'] {
+								&:first-child {
+									width: 100%;
+								}
+								&:last-child {
+									width: 100%;
+									margin: 10px 0 0 0;
+								}
+							}
+						}
+					}
+					&:last-child {
+						.input-wrap {
+							display: block;
+							input[type='text'] {
+								width: 100%;
+								margin: 10px 0 0 0;
+								&:first-child { margin-top: 0; }
+								&:last-child { width: 100%; }
+							}
+						}
+					}
+				}
+			}
+			.income {
+				.input-wrap {
+					.select {
+						width: 100%;
+						margin: 10px 0 0 0;
+						&:first-child { margin-top: 0; }
+					}
+					input[type='text'] {
+						width: 100%;
+						margin: 10px 0 0 0;
+					}
+				}
+			}
+			.tel-wrap { max-width: 406px; }
+			.notice-list { font-size: 12px; }
+		}
+	}
+
+	@include mob-large {
+		.form-area {
+			.age {
+				display: block;
+				margin-left: 0;
+			}
+		}
+	}
+
+	@include mob-mid {
+		.school-form {
+			input[type='text'].search {
+				padding: 0 30px 0 10px;
+				font-size: 12px;
+				background-position: calc(100% - 7px) 50%;
+				background-size: 20px auto;
+			}
+		}
+	}
+}

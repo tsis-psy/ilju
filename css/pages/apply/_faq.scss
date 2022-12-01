@@ -1,0 +1,122 @@
+/* 지원신청 - 자주 묻는 질문 */
+.apply-faq {
+	.accordion.faq {
+		border-top: 2px solid $base-color;
+		border-bottom: 2px solid $border-color;
+		margin-top: 0;
+		li {
+			border-top: none;
+			border-bottom: 1px solid $border-color;
+			&:last-child { border-bottom: none; }
+			> div { border-bottom: none; }
+		}
+		li.active { border-top: none; }
+		.tit {
+			padding: 20px 82px;
+			position: relative;
+			.inner {
+				padding: 0;
+				&:after {
+					content: 'Q';
+					display: block;
+					font-family: 'Godo';
+					font-weight: 500;
+					line-height: 1;
+					font-size: 28px;
+					color: $primary-color;
+					position: absolute;
+					top: 19px;
+					left: 36px;
+					word-wrap: break-word;
+				}
+			}
+		}
+		.con {
+			display: none;
+			padding: 20px 82px;
+			position: relative;
+			.inner {
+				padding: 0;
+				&:after {
+					content: 'A';
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 34px;
+					height: 34px;
+					line-height: 1;
+					font-family: 'Godo';
+					font-weight: 500;
+					font-size: 20px;
+					color: #fff;
+					background-color: $primary-color;
+					border-radius: 50%;
+					position: absolute;
+					top: 25px;
+					left: 30px;
+					word-wrap: break-word;
+				}
+			}
+		}
+	}
+	.tab-menu {
+		margin-bottom: 40px;
+		padding: 0;
+		.list {
+			width: 70%;
+			max-width: 640px;
+			li {
+				width: 33%;
+				&:last-child { width: 34%; }
+			}
+		}
+	}
+
+	@include media-mob {
+		.accordion.faq {
+			.tit {
+				padding: 20px 30px;
+				font-size: 16px;
+				.inner:after {
+					font-size: 24px;
+					top: 22px;
+					left: 4px;
+				}
+			}
+			.con {
+				padding: 20px 30px;
+				font-size: 14px;
+				.inner:after {
+					width: 26px;
+					height: 26px;
+					font-size: 16px;
+					top: 22px;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	@include mob {
+		.tab-menu {
+			.list { width: 84%; }
+		}
+	}
+
+	@include mob-mid {
+		.tab-menu {
+			.list { width: 100%; }
+		}
+	}
+
+	@include mob-small {
+		.tab-menu {
+			.list {
+				li {
+					width: 30%;
+					&:last-child { width: 40%; }
+				}
+			}
+		}
+	}
+}

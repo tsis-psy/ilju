@@ -1,0 +1,90 @@
+.main-index {
+	.story {
+		height: 500px;
+		background: url('@@img/main/bg-movie.jpg') 50% 50% no-repeat;
+		color: #fff;
+		overflow: hidden;
+		background-size: cover;
+		.inner {
+			width: 100%;
+			max-width: 1700px;
+			margin: 0 auto;
+			height: 100%;
+			padding: 160px 0 0 10%;
+			position: relative;
+		}
+		h2 {
+			max-width: 287px;
+			font-family: 'Godo';
+			font-size: 56px;
+			font-weight: 400;
+			line-height: 72px;
+		}
+		p {
+			margin-top: 10px;
+			font-size: 18px;
+			line-height: 26px;
+		}
+		.play {
+			position: absolute;
+			top: 50%;
+			left: 47.6%;
+			display: inline-block;
+			transform: translateY(-50%);
+			@include spriteIR($icons-play);
+		}
+		.movie {
+			display: none;
+			width: 90%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 5%;
+			.btn-close {
+				position: absolute;
+				top: 5px;
+				right: -40px;
+			}
+			iframe, object, embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border: 0;
+			}
+		}
+	}
+}
+
+@include media-mob {
+	.main-index {
+		.story {
+			height: 300px;
+			.inner {
+				padding: 153px 0 0;
+				text-align: center;
+			}
+			h2 {
+				max-width: 100%;
+				text-align: center;
+				line-height: 1.43;
+				font-size: 28px;
+			}
+			p {
+				text-align: center;
+				line-height: 1.57;
+				font-size: 14px;
+			}
+			.play {
+				@include spriteIR-2x-pad($icons-play);
+				top: 23%;
+				left: 50%;
+				transform: translate(-50%,0);
+			}
+			.movie {
+				width: 100%;
+			}
+		}
+	}
+}

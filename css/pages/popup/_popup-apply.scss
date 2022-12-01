@@ -1,0 +1,88 @@
+/* 지원신청 팝업 */
+.popup-content-default {
+	/* 학교 검색 팝업 */
+	&.find-school {
+		.inner {
+			> .con { padding-bottom: 0; }
+		}
+		.result-list {
+			padding: 10px 2px;
+			border-top: 1px solid #333;
+			li {
+				display: flex;
+				flex-direction: row;
+				.tit {
+					flex-shrink: 0;
+					box-sizing: border-box;
+					width: 66px;
+					padding: 8px 4px 8px 0;
+					text-align: left;
+					word-wrap: break-word;
+				}
+				.con {
+					flex-grow: 1;
+					min-width: 0;
+					padding: 8px 0;
+					text-align: left;
+					word-wrap: break-word;
+					&:hover { text-decoration: underline; }
+				}
+			}
+		}
+		@include media-mob {
+			.result-list li .con:hover { text-decoration: none; }
+		}
+	}
+
+	/* 학점 입력 팝업 */
+	&.credit {
+		> .inner {
+			> .con {
+				.title { margin-bottom: 15px; }
+			}
+		}
+		.popup-form {
+			margin-top: 15px;
+			.input-credit {
+				th { text-align: right; }
+				td {
+					font-size: 0;
+					vertical-align: middle;
+					input[type='text'] { width: 140px; }
+				}
+			}
+		}
+	}
+
+	/* 학점 입력 팝업 type 2 */
+	&.credit-type2 {
+		.popup-form {
+			margin-top: 15px;
+			.input-credit {
+				th { text-align: right; }
+				td {
+					font-size: 0;
+					vertical-align: middle;
+					input[type='text'] { width: 100px; }
+					.partition {
+						display: inline-block;
+						margin: 0 5px;
+						color: #bbb;
+						font-size: 18px;
+						text-align: center;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+		@include media-mob {
+			.popup-form {
+				.input-credit {
+					td {
+						input[type='text'] { width: 65px; }
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,382 @@
+.email-wrap {
+	font-size: 0;
+	text-align: left;
+	.email-inner {
+		display: inline-block;
+		vertical-align: middle;
+		width: 57%;
+		font-size: 0;
+	}
+	.at {
+		display: inline-block;
+		width: 20px;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 16px;
+		color: #757575;
+	}
+	input[type='text'] {
+		width: calc(50% - 10px);
+	}
+	select {
+		width: calc(43% - 10px);
+		margin-left: 10px;
+		vertical-align: middle;
+	}
+}
+.tel-wrap {
+	display: flex;
+	.bar {
+		flex-shrink: 0;
+		display: inline-block;
+		line-height: 2.2;
+		width: 15px;
+		text-align: center;
+		font-size: 16px;
+		color: #757575;
+	}
+}
+.amount-wrap {
+	font-size: 0;
+	input[type='text'] {
+		width: calc(50% - 7.5px);
+	}
+}
+.slash {
+	display: inline-block;
+	width: 15px;
+	text-align: center;
+	color: #bbb;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+.control-wrap {
+	position: relative;
+	margin-top: 50px;
+	.title-txt {
+		position: relative;
+		display: inline-block;
+		top: 13px;
+	}
+	.table-row {
+		clear: right;
+		border-top: 1px solid #dedede;
+		thead {		
+			border-bottom: 1px solid #dedede;
+			th {
+				padding: 19px 0 17px;
+				text-align: center;
+				font-weight: 500;
+				color: #757575;
+			}
+		}
+		tbody tr:first-child {
+			td,
+			th { padding-top: 25px; }
+		}
+		tbody tr:last-child {
+			td,
+			th {
+				padding-bottom: 25px;
+				border-bottom: 1px solid #dedede;
+			}
+		}
+		td {
+			padding: 5px;
+			text-align: center;
+			&.left { text-align: left; }
+		}
+	}
+	.school-form,
+	.input-list { clear: right; }
+	.controls {
+		float: right;
+		margin-bottom: 10px;
+		font-size: 0;
+		+ .input-list {
+			padding: 30px 10px;
+			border-top: 1px solid #dedede;
+			border-bottom: 1px solid #dedede;
+		}
+	}
+}
+
+.check-list {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+	> li {
+		display: inline-block;
+		margin-bottom: 5px;
+		vertical-align: middle;
+		margin-right: 20px;
+		line-height: 2.5;
+		&:last-child { margin-right: 0; }
+		input[type='text'] {
+			max-width: 100px;
+			line-height: 1.3;
+		}
+		&.only-text {
+			padding-right: 90px;
+			label.check {
+				height: 40px;
+				line-height: 2.5;
+				input { top: 8px; }
+				span:before { top: 8px; }
+			}
+		}
+	}
+}
+
+.input-wrap {
+	font-size: 0;
+	margin-top: 10px;
+	&.post {
+		input[type='text'] { max-width: 261px; }
+	}
+	&:first-child { margin-top: 0; }
+	input[type='text'],
+	.select {
+		margin-left: 10px;
+		vertical-align: middle;
+		&:first-child { margin-left: 0; }
+		&.small { width: 11.35%; }
+		&.medium { width: 16.2%; }
+		&.large { width: 21%; }
+		&.search, &.school { width: 33.5%; }
+	}
+	input[type='text'] + .btn { margin-left: 10px; }
+	.text,
+	.after-text {
+		margin-left: 10px;
+		font-size: 16px;
+		vertical-align: middle;
+	}
+	.check {
+		margin-left: 10px;
+	}
+	.check:first-child { margin-left: 0; }
+	.select {
+		display: inline-block;
+		vertical-align: middle;
+		width: 144px;
+	}
+	&.tip {
+		@include clearfix;
+		.file-attach { float: left; }
+		.tooltip {
+			float: left;
+			padding-top: 8px;
+			margin-left: 10px;
+			font-size: 14px;
+		}
+	}
+}
+
+.input-table {
+	dl {
+		display: flex;
+		margin-top: 10px;
+		&:first-child { margin-top: 0; }
+	}
+	dt {
+		width: 105px;
+		flex-shrink: 0;
+		text-align: left;
+		vertical-align: middle;
+		line-height: 2.2;
+		font-size: 18px;
+		font-weight: 500;
+	}
+	dd {
+		width: 100%;
+		text-align: left;
+		display: flex;
+		.btn {
+			flex-shrink: 0;
+			margin-left: 10px;
+			padding: 0 24px;
+		}
+	}
+	input.date { max-width: 100%; }
+	select { max-width: 260px; }
+}
+
+@include pc-small {
+	.control-wrap {
+		input[type='text'] {
+			padding: 0 10px;
+			font-size: 14px;
+		}
+		select {
+			padding: 0 22px 0 10px;
+			font-size: 14px;
+			background-size: 12px auto;
+			background-position: calc(100% - 10px) 50%;
+		}
+	}
+}
+
+@include tab {
+	.control-wrap {
+		input[type='text'],
+		select { font-size: 13px; }
+	}
+}
+
+@include media-mob {
+	.control-wrap {
+		.title-txt {
+			display: block;
+			top: 0;
+		}
+		.table-row {
+			position: relative;
+			thead {
+				th {
+					&:first-child {
+						display: block;
+						position: absolute;
+						top: -40px;
+						left: 10px;
+						padding: 0;
+					}
+					&:not(:first-child) { display: none; }
+				}
+			}
+			tbody,
+			tr,
+			td { display: block; }
+			tbody { 
+				tr {
+					font-size: 0;
+					border-bottom: 1px solid #dedede;
+					padding-bottom: 30px;
+					margin-bottom: 30px;
+					&:first-child {
+						margin-top: 30px;
+						td,
+						th {
+							padding-top: 0;
+						}
+					}
+					&:last-child {
+						border-bottom: 0;
+						padding-bottom: 0;
+						margin-bottom: 0;
+						td,
+						th {
+							padding-bottom: 5px;
+							border-bottom: 0;
+						}
+					}
+				}
+				td {
+					&:not(:first-child) {
+						padding: 0 10px 5px;
+						&.half {
+							display: inline-block;
+							width: 50%;
+							vertical-align: middle;
+							&.left { padding-right: 5px; }
+							&.right { padding-left: 5px; }
+						}
+						&:before {
+							content: attr(data-th);
+							display: block;
+							text-align: left;
+							padding: 10px 0 5px;
+							font-size: 14px;
+							font-weight: 500;
+							color: #757575;
+						}
+					}
+					&:first-child {
+						padding: 0 0 5px 10px;
+						text-align: left;
+					}
+					input.date,
+					input.date-yy { max-width: 100%; }
+				}
+			}
+		}
+		input[type='text'] {
+			font-size: 14px;
+			padding: 0 15px;
+		}
+		select {
+			font-size: 14px;
+			padding: 0 40px 0 15px;
+			background-size: 17px auto;
+			background-position: calc(100% - 15px) 50%;
+		}
+	}
+	.input-wrap {
+		&.post {
+			display: flex;
+			input[type='text'] + .btn {
+				flex-shrink: 0;
+				margin-left: 5px;
+				padding: 0 15px;
+			}
+		}
+		input[type='text'],
+		.select {
+			&.small,
+			&.medium,
+			&.large,
+			&.search,
+			&.school {
+				width: 100%;
+				max-width: 100%;
+				margin: 10px 0 0 0;
+			}
+			&.half {
+				width: calc(50% - 5px);
+				&.left { margin-right: 10px; }
+			}
+			&.half-more {
+				width: 65%;
+				+ .text {
+					display: inline-block;
+					margin: 0 0 0 10px;
+				}
+				+ .check {
+					margin: 10px 0 0 10px;
+				}
+			}
+		}
+		.check:first-of-type { margin-top: 10px; }
+		.check:first-child { margin-top: 0; }
+		.text {
+			display: block;
+			margin: 5px 0 0 0;
+			font-size: 14px;
+		}
+	}
+	.input-table {
+		dl,
+		dt {
+			display: block;
+			width: 100%;
+			font-size: 16px;
+		}
+		dd {
+			.btn { padding: 0 15px; }
+		}
+		select { max-width: 100%; }
+	}
+}
+
+@include mob {
+	.email-wrap {
+		.email-inner { width: 100%; }
+		select {
+			display: block;
+			width: 100%;
+			margin: 10px 0 0 0;
+			box-sizing: border-box;
+		}
+	}
+}

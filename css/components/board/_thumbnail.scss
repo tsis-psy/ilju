@@ -1,0 +1,246 @@
+.board-thumbnail {
+	opacity: 0;
+	border-top: 2px solid $base-color;
+	position: relative;
+	z-index: 1;
+
+	.list {
+		padding: 40px 55px;
+		margin: 0 auto;
+		border-bottom: 1px solid #dedede;
+		position: relative;
+
+		a {
+			display: block;
+
+			&:hover .img { transform: scale(1.1); }
+		}
+
+		.thumb {
+			height: 0;
+			max-height: 0;
+			padding-top: 56%;
+			overflow: hidden;
+			position: relative;
+		}
+	
+		.img {
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: transform .4s;
+		}
+
+		.tit {
+			padding-top: 20px;
+			font-weight: 500;
+			font-size: 18px;
+			text-align: center;
+			word-wrap: break-word;
+			@include ellipsis;
+		}
+
+		.swiper-button-prev {
+			transform: translateY(-16px);
+	
+			&:after { @include spriteIR($icons-arrow-left); }
+		}
+	
+		.swiper-button-next {
+			transform: translateY(-16px);
+	
+			&:after { @include spriteIR($icons-arrow-right); }
+		}
+	}
+
+	.detail {
+		border-bottom: 1px solid #dedede;
+		text-align: center;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	@include media-mob {
+		.list {
+			padding: 30px 30px 18px 30px;
+
+			a:hover .img { transform: scale(1); }
+
+			.tit {
+				padding-top: 15px;
+				font-size: 16px;
+			}
+
+			.swiper-button-prev {
+				width: 16px;
+				height: 30px;
+				left: 0;
+				transform: translateY(-10px);
+
+				&:after { @include spriteIR-2x($icons-arrow-left-2x); }
+			}
+
+			.swiper-button-next {
+				width: 16px;
+				height: 30px;
+				right: 0;
+				transform: translateY(-10px);
+
+				&:after { @include spriteIR-2x($icons-arrow-right-2x); }
+			}
+		}
+	}
+}
+
+.thumbnail-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	li {
+		opacity: 0;
+		width: 22.5%;
+		margin-left: 3.33%;
+		border: solid 1px #dedede;
+		&:nth-child(4n + 1) { margin-left: 0; }
+		&:nth-child(n + 5) { margin-top: 40px; }
+	}
+	a {
+		display: block;
+		&:hover {
+			.thumb .img { transform: scale(1.1); }
+			.tit { text-decoration: underline; }
+		}
+	}
+	.thumb {
+		padding: 12.31% 13.05%;
+		.wrap {
+			height: 0;
+			min-height: 0;
+			padding-top: 117%;
+			position: relative;
+			overflow: hidden;
+		}
+		.img {
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			transition: transform .4s;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.con {
+		padding: 7.08% 13.05% 10.07%;
+		border-top: 1px solid #dedede;
+	}
+	.tit {
+		color: #333;
+		font-weight: 700;
+		font-size: 18px;
+		word-wrap: break-word;
+		@include multilineEllipsis(2);
+	}
+	.info {
+		margin-top: 7px;
+		& + .info { margin-top: 0; }
+	}
+	.author {
+		color: #757575;
+		font-size: 14px;
+		word-wrap: break-word;
+	}
+	.company {
+		padding-left: 12px;
+		margin-left: 8px;
+		color: #757575;
+		font-size: 14px;
+		word-wrap: break-word;
+		position: relative;
+		&:after {
+			content: '';
+			display: block;
+			width: 2px;
+			height: 15px;
+			background-color: #d4d4d4;
+			position: absolute;
+			top: 4px;
+			left: 0;
+		}
+	}
+	.year {
+		color: #757575;
+		font-size: 14px;
+		word-wrap: break-word;
+	}
+	.select {
+		padding-left: 12px;
+		margin-left: 8px;
+		color: #757575;
+		font-size: 14px;
+		word-wrap: break-word;
+		position: relative;
+		&:after {
+			content: '';
+			display: block;
+			width: 2px;
+			height: 15px;
+			background-color: #d4d4d4;
+			position: absolute;
+			top: 4px;
+			left: 0;
+		}
+	}
+	.str {
+		display: inline-block;
+		margin-left: 2px;
+		color: #333;
+		font-weight: 700;
+	}
+	&.book {
+		.thumb {
+			.wrap {
+				padding-top: 135%;
+			}
+		}
+		.tit {
+			min-height: 54px;
+		}
+	}
+
+	@include media-mob {
+		li {
+			width: 48%;
+			&:nth-child(2n + 1) { margin-left: 4%; }
+			&:nth-child(2n - 1) { margin-left: 0; }
+			&:nth-child(n + 3) { margin-top: 30px; }
+		}
+		.thumb { padding: 7.14%; }
+		.con { padding: 7.14%; }
+		.tit { font-size: 16px; }
+		.info { margin-top: 6px; }
+		.author { font-size: 14px; }
+		.company { font-size: 14px; }
+		a:hover {
+			.img { transform: scale(1); }
+			.itt { text-decoration: none; }
+		}
+	}
+
+	@include mob-mid {
+		li {
+			width: 80%;
+			margin-left: 0;
+			margin: 0 auto;
+			&:nth-child(2n - 1) { margin: 0 auto; }
+			&:not(:first-child) { margin-top: 30px; }
+		}
+	}
+}

@@ -1,0 +1,29 @@
+/* 재단소식 공통 */
+/* .section-news {
+} */
+
+/* 뉴스레터 */
+.news-newsletter {
+	.board-header { justify-content: flex-end; }
+	.search-box {
+		.search-inner { max-width: 290px; }
+		.select-wrap {
+			width: 240px;
+			flex-shrink: 1;
+		}
+	}
+
+	@include media-mob {
+		.board-header .search-box {
+			width: auto;
+		}
+	}
+
+	@include mob-mid {
+		.board-header .search-box {
+			width: 100%;
+			.search-inner { max-width: 100%; }
+			.select-wrap { width: 100%; }
+		}
+	}
+}

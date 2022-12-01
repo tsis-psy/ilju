@@ -1,0 +1,161 @@
+/* 공통 푸터 */
+.common-footer {
+	text-align: center;
+	height: 340px;
+	.inner {
+		height: 340px;
+		padding: 58px 0;
+	}
+	h2 {
+		@include hidden;
+	}
+	.logo {
+		margin: 0 auto 28px;
+		@include spriteIR-2x-pad($logo-image-only-2x);
+	}
+	.menu {
+		display: inline-block;
+		vertical-align: middle;
+		li {
+			display: inline-block;
+			margin-left: 20px;
+			line-height: 1.1;
+			font-size: 18px;
+			font-weight: 500;
+			color: #272727;
+			&:first-child { margin-left: 0; }
+		}
+	}
+	.dropdown {
+		display: inline-block;
+		position: relative;
+		width: 146px;
+		height: 30px;
+		line-height: 2.14;
+		margin-left: 20px;
+		text-align: left;
+		font-size: 14px;
+		vertical-align: middle;
+		> a {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 100%;
+			height: 30px;
+			border: 1px solid #dedede;
+			border-radius: 6px;
+			padding: 0 20px 0 10px;
+			background: url('@@img/common/arrow-down-2x.png') calc(100% - 10px) 50% no-repeat;
+			background-size: 14px auto;
+			&.active {
+				border-color: $primary-color;
+				background: url('@@img/common/arrow-up-black-2x.png') calc(100% - 10px) 50% no-repeat;
+				background-size: 14px auto;
+			}
+		}
+		ul {
+			display: none;
+			position: absolute;
+			bottom: 30px;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			border: 1px solid $primary-color;
+			border-radius: 6px;
+			padding: 5px 0;
+			background-color: #fff;
+			overflow: hidden;
+		}
+		li > a {
+			display: inline-block;
+			width: 100%;
+			padding: 0 10px;
+			&:hover, &:focus {
+				background-color: #f5f5f5;
+			}
+		}
+	}
+	address {
+		margin-top: 16px;
+		line-height: 1.5;
+		font-size: 16px;
+		font-style: normal;
+		.contact {
+			span {
+				display: inline-block;
+				margin-left: 15px;
+				&:first-child { margin-left: 0; }
+			}
+		}
+	}
+	.copy {
+		margin-top: 19px;
+		line-height: 1.5;
+		font-size: 12px;
+		color: #757575;
+	}
+}
+#loading { /* 200928 추가 */
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: #fff;
+	opacity: .7;
+	z-index: 99;
+	text-align: center;
+}
+#loading-image { /* 200928 추가 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+}
+
+@include media-mob {
+	.common-footer {
+		height: 280px;
+		.inner {
+			height: 280px;
+			padding: 40px 0;
+		}
+		.logo {
+			margin: 0 auto 10.3px;
+			@include spriteIR-2x($logo-m-image-only);
+		}
+		.menu {
+			li {
+				margin-left: 11.5px;
+				line-height: 1.46;
+				font-size: 13px;
+				letter-spacing: -.32px;
+			}
+		}
+		.dropdown {
+			display: block;
+			margin: 10px auto 0;
+			width: 120px;
+			font-size: 12px;
+			> a { line-height: 2.4; }
+		}
+		address {
+			margin-top: 15.5px;
+			line-height: 1.45;
+			font-size: 12px;
+			.contact {
+				span {
+					&:last-child {
+						display: block;
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		.copy {
+			margin-top: 11px;
+			line-height: 1.45;
+			font-size: 12px;
+		}
+	}
+}
